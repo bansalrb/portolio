@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Bansal's Blog</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light grey background */
+            color: #333;
+            line-height: 1.6;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50; /* Dark blue */
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background-color: #3498db; /* Blue accent */
+            margin: 10px auto 0;
+            border-radius: 5px;
+        }
+        .blog-post {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem; /* Reduced padding */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        .blog-post-title {
+            font-size: 1.25rem; /* Reduced font size */
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .blog-post-meta {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+        .blog-post-excerpt {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        .blog-post-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .blog-post-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .blog-post-title {
+                font-size: 1.15rem;
+            }
+            .blog-post-excerpt {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <h1 class="text-3xl font-bold text-gray-800">
+                Rohan's Blog
+            </h1>
+            <!-- Back to Portfolio link -->
+            <a href="index.html" class="text-blue-500 hover:text-blue-600 font-semibold transition-colors duration-300">
+                &larr; Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <h2 class="section-title">Latest Posts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
+
+            <!-- Blog Post 1 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">Automating Infrastructure with Terraform</h3>
+                <p class="blog-post-meta">Published on August 7, 2025</p>
+                <p class="blog-post-excerpt">
+                    A deep dive into how Terraform can help you manage your cloud resources efficiently and prevent configuration drift.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_1" class="blog-post-link">Read more &rarr;</a>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">The Importance of CI/CD Pipelines</h3>
+                <p class="blog-post-meta">Published on July 28, 2025</p>
+                <p class="blog-post-excerpt">
+                    Exploring the benefits of continuous integration and continuous deployment for modern software development teams.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_2" class="blog-post-link">Read more &rarr;</a>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">Demystifying Kubernetes for Beginners</h3>
+                <p class="blog-post-meta">Published on July 15, 2025</p>
+                <p class="blog-post-excerpt">
+                    A simple guide to understanding the core concepts of Kubernetes and how it can help you orchestrate containers at scale.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_3" class="blog-post-link">Read more &rarr;</a>
+            </div>
+            
+            <!-- Blog Post 4 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">Mastering Docker for Containerization</h3>
+                <p class="blog-post-meta">Published on July 10, 2025</p>
+                <p class="blog-post-excerpt">
+                    An in-depth look at using Docker to package and run applications in isolated environments.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_4" class="blog-post-link">Read more &rarr;</a>
+            </div>
+            
+            <!-- Blog Post 5 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">Monitoring and Logging with Prometheus and Grafana</h3>
+                <p class="blog-post-meta">Published on June 25, 2025</p>
+                <p class="blog-post-excerpt">
+                    Setting up a robust monitoring solution to track the health and performance of your applications and infrastructure.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_5" class="blog-post-link">Read more &rarr;</a>
+            </div>
+
+            <!-- Blog Post 6 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">GitOps: The Future of CI/CD</h3>
+                <p class="blog-post-meta">Published on June 18, 2025</p>
+                <p class="blog-post-excerpt">
+                    Understanding the principles of GitOps and how it can streamline your delivery workflows.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_6" class="blog-post-link">Read more &rarr;</a>
+            </div>
+
+            <!-- Blog Post 7 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">AWS Certified DevOps Engineer: My Study Guide</h3>
+                <p class="blog-post-meta">Published on May 30, 2025</p>
+                <p class="blog-post-excerpt">
+                    Tips, resources, and a structured plan for passing the AWS Certified DevOps Engineer - Professional exam.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_7" class="blog-post-link">Read more &rarr;</a>
+            </div>
+
+            <!-- Blog Post 8 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">Building a Scalable Microservices Architecture</h3>
+                <p class="blog-post-meta">Published on May 12, 2025</p>
+                <p class="blog-post-excerpt">
+                    A look at best practices for designing and implementing microservices to ensure scalability and resilience.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_8" class="blog-post-link">Read more &rarr;</a>
+            </div>
+
+            <!-- Blog Post 9 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">Choosing the Right Cloud Provider for Your Project</h3>
+                <p class="blog-post-meta">Published on May 5, 2025</p>
+                <p class="blog-post-excerpt">
+                    A comparison of AWS, Azure, and Google Cloud Platform to help you make an informed decision.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_9" class="blog-post-link">Read more &rarr;</a>
+            </div>
+
+            <!-- Blog Post 10 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">SRE vs. DevOps: What's the Difference?</h3>
+                <p class="blog-post-meta">Published on April 20, 2025</p>
+                <p class="blog-post-excerpt">
+                    Clarifying the roles and responsibilities of Site Reliability Engineers and DevOps practitioners.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_10" class="blog-post-link">Read more &rarr;</a>
+            </div>
+
+            <!-- Blog Post 11 -->
+            <div class="blog-post">
+                <h3 class="blog-post-title">A Guide to Serverless Computing with AWS Lambda</h3>
+                <p class="blog-post-meta">Published on April 1, 2025</p>
+                <p class="blog-post-excerpt">
+                    An introduction to serverless architecture and a practical guide to getting started with AWS Lambda.
+                </p>
+                <a href="URL_TO_FULL_BLOG_POST_11" class="blog-post-link">Read more &rarr;</a>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+        <p>&copy; <span id="current-year"></span> Rohan Bansal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
