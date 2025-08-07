@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Bansal - DevOps Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light grey background */
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #34495e); /* Dark blue gradient */
+            color: #ecf0f1; /* Light text for header */
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50; /* Dark blue */
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background-color: #3498db; /* Blue accent */
+            margin: 10px auto 0;
+            border-radius: 5px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        /* Styles for skill categories and individual skills */
+        .skill-category {
+            background-color: #f8fafd; /* Lighter background for categories */
+            border: 1px solid #e0e7ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .skill-category:hover {
+            border-color: #a7c8ed;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+        .skill-category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .skill-item {
+            background-color: #e8f0fe; /* Light blue */
+            color: #2b6cb0; /* Darker blue for text */
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .skill-item:hover {
+            background-color: #d1e3ff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles for Project Boxes */
+        .project-box {
+            background-color: #f8fafd;
+            border: 1px solid #e0e7ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .project-box:hover {
+            border-color: #a7c8ed;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+        .project-box h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .project-box p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        .project-box .icon {
+            width: 28px;
+            height: 28px;
+            color: #3498db;
+        }
+
+
+        .experience-item {
+            border-left: 4px solid #3498db; /* Blue accent line */
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #3498db;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 2px #3498db;
+        }
+        .experience-item h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 0.25rem;
+        }
+        .experience-item p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.75rem;
+        }
+        .experience-item ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            color: #666;
+        }
+        .experience-item ul li {
+            margin-bottom: 0.5rem;
+        }
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .contact-info a:hover {
+            color: #2980b9;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-fade-in-delay {
+            animation: fadeIn 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+        .animate-fade-in-delay-2 {
+            animation: fadeIn 1s ease-out 1s forwards;
+            opacity: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .experience-item h3 {
+                font-size: 1.5rem;
+            }
+            .experience-item h4 {
+                font-size: 1.1rem;
+            }
+            .experience-item p {
+                font-size: 0.95rem;
+            }
+            .skill-category {
+                padding: 1rem;
+            }
+            .skill-category-title {
+                font-size: 1.25rem;
+            }
+            .skill-item {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            .project-box h3 {
+                font-size: 1.1rem;
+            }
+            .project-box p {
+                font-size: 0.85rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/lucide.min.js"></script>
+</head>
+<body>
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#about">Rohan Bansal</a>
+            </div>
+            <div class="space-x-6 hidden md:flex">
+                <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">Skills</a>
+                <a href="#experience" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">Projects</a>
+                <a href="#certifications" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">Certifications</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1 class="animate-fade-in">ROHAN BANSAL</h1>
+            <p class="animate-fade-in-delay">DevOps Engineer | Automating Software Delivery</p>
+            <div class="mt-8 flex justify-center space-x-6 animate-fade-in-delay-2">
+                <a href="https://github.com/bansalrb" target="_blank" class="text-white hover:text-blue-300 transition-colors flex items-center" aria-label="GitHub Profile">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.493.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.294-1.552 3.302-1.23 3.302-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386C24 5.373 18.627 0 12 0z"/></svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/bansalrb" target="_blank" class="text-white hover:text-blue-300 transition-colors flex items-center" aria-label="LinkedIn Profile">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5 1.11-2.5 2.48-2.5 2.48 1.119 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.85-7.61-11.025-3.484v-2.385z"/></svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:bansal.rohan2567@gmail.com" class="text-white hover:text-blue-300 transition-colors flex items-center" aria-label="Send an Email">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.721v14.434h24v-14.434l-12 9.721z"/></svg>
+                    <span>Email</span>
+                </a>
+                <a href="tel:+917009606673" class="text-white hover:text-blue-300 transition-colors flex items-center" aria-label="Call me">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M20 22.923c-2.316-.279-4.707-.07-7.054-.539-3.275-.658-6.103-2.613-8.62-5.434-2.502-2.812-4.148-5.965-4.326-9.529-.115-2.327.34-4.639 1.336-6.843l2.203-4.887c.361-.8.95-1.442 1.704-1.854.764-.417 1.62-.572 2.47-.39l4.577.954c.731.152 1.378.536 1.868 1.085l.777.892c.624.717.382 1.835-.544 2.226l-3.327 1.401c-.812.342-1.748.169-2.427-.42l-.462-.395c-1.398-1.2-3.315-1.921-5.321-2.158l-.66-.076c-.808-.093-1.637.28-2.146.974l-.946 1.285c-.97 1.319-1.579 2.871-1.713 4.544-.22 2.766 1.026 5.344 3.036 7.354 2.14 2.141 4.79 3.407 7.732 3.864 1.621.251 3.257.243 4.88-.024.776-.129 1.636.082 2.222.569l.72.697c.563.544.757 1.365.556 2.091l-1.07 3.882c-.226.828-.901 1.464-1.71 1.747l-1.024.341c-.604.2-.953.864-.814 1.503.228 1.025-1.289 1.666-2.143 1.109l-1.86-.889c-.588-.28-.934-.913-.761-1.565z"/></svg>
+                    <span>Phone</span>
+                </a>
+            </div>
+            <a href="path/to/your/resume.pdf" download aria-label="Download Resume" class="mt-8 inline-block bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300 animate-fade-in-delay-2">
+                <svg class="icon inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download Resume
+            </a>
+        </div>
+    </header>
+
+    <main class="container py-8">
+        <section id="about" class="mb-12">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    A results-oriented DevOps Engineer with 5+ years of experience streamlining software delivery through
+                    automation. Proven ability to design, implement, and maintain CI/CD pipelines using GitHub Actions and
+                    Azure DevOps. Expertise in infrastructure as code (IaC) using Terraform, enabling efficient and repeatable
+                    cloud deployments across AWS, Azure, and GCP. Proficient in containerization (Docker) and orchestration
+                    (Kubernetes) to build and deploy highly scalable and resilient applications. Seeking a challenging DevOps role
+                    where I can leverage my skills to contribute to a high-performing team.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-12">
+            <h2 class="section-title">Skills</h2>
+            <div class="card grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-branch"><line x1="6" x2="6" y1="3" y2="15"/><path d="M18 6V3"/><path d="M18 18v-3"/><path d="M6 18c-2.2 0-4-1.8-4-4s1.8-4 4-4h12c2.2 0 4 1.8 4 4s-1.8 4-4 4H6Z"/></svg>
+                        Version Control & Collaboration
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-item">GIT/GitHub</span>
+                        <span class="skill-item">Azure Repos</span>
+                        <span class="skill-item">JIRA</span>
+                        <span class="skill-item">MS Teams</span>
+                        <span class="skill-item">Confluence</span>
+                        <span class="skill-item">Bitbucket</span>
+                        <span class="skill-item">Rally Board</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        CI/CD
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">Azure Pipelines</span>
+                        <span class="skill-item">Jenkins</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package"><path d="M18 20V6H6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2z"/><path d="M10 2h4"/></svg>
+                        Containerization & Orchestration
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Amazon ECS Fargate</span>
+                        <span class="skill-item">Amazon EKS</span>
+                        <span class="skill-item">Azure Container Apps</span>
+                        <span class="skill-item">Azure App services</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bricks"><path d="M2 20h.01"/><path d="M7 20h.01"/><path d="M12 20h.01"/><path d="M17 20h.01"/><path d="M22 20h.01"/><path d="M2 15h.01"/><path d="M7 15h.01"/><path d="M12 15h.01"/><path d="M17 15h.01"/><path d="M22 15h.01"/><path d="M2 10h.01"/><path d="M7 10h.01"/><path d="M12 10h.01"/><path d="M17 10h.01"/><path d="M22 10h.01"/><path d="M2 5h.01"/><path d="M7 5h.01"/><path d="M12 5h.01"/><path d="M17 5h.01"/><path d="M22 5h.01"/></svg>
+                        Infrastructure As Code (IaC)
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Terraform</span>
+                        <span class="skill-item">Terragrunt</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                        Cloud Platforms
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Azure</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                        Databases
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">Amazon RDS</span>
+                        <span class="skill-item">Milvus</span>
+                    </div>
+                </div>
+
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                        Monitoring
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-item">AWS Cloudwatch</span>
+                        <span class="skill-item">Prometheus</span>
+                        <span class="skill-item">Grafana</span>
+                        <span class="skill-item">Azure Log Analytics Workspace</span>
+                    </div>
+                </div>
+                
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                        Security Tools
+                    </h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Fortify</span>
+                        <span class="skill-item">SAST and DAST scans</span>
+                        <span class="skill-item">Trivy</span>
+                        <span class="skill-item">Checkov</span>
+                        <span class="skill-item">SonarQube</span>
+                        <span class="skill-item">Tflint</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-12">
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="card">
+                <div class="experience-item">
+                    <h3>Cognizant Technology Solutions</h3>
+                    <h4>Infra Dev Specialist | October 2024 - Present</h4>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Supported in creating GitHub Actions workflows, and terraform modules for Azure Infrastructure.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>HashedIn By Deloitte</h3>
+                    <h4>DevOps Engineer | October 2021 - October 2024</h4>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li><strong>Automation:</strong> Implemented Terraform automation to optimize multi-cloud infrastructure provisioning, covering Azure and AWS resources. Utilizing the Terragrunt framework that enabled efficient management of multiple environments, also implemented AWS CodePipeline and CodeBuild facilitated seamless CI/CD across accounts.</li>
+                        <li><strong>CI/CD:</strong> Using GitHub Actions, integrating manual approvals, build and push pipelines. I created workflows for sequential builds, linting, and updating Airflow with the latest DAGs. Utilizing Azure DevOps, implemented Azure Pipeline YAML scripting to automate CI/CD processes, improving deployment efficiency and code quality throughout the development lifecycle.</li>
+                        <li><strong>Migration:</strong> Developed AWS launch templates for migrating servers between accounts using AWS Migration Service and executed post-migration testing scripts for software installations and configuration management, ensuring system integrity and operational readiness.</li>
+                        <li><strong>Container Orchestration:</strong> Created Dockerfiles for Python, Spring Boot, Node, and React projects, managing secrets and environment variables, used AWS ECS, Azure Container Apps, and Kubernetes for container orchestration to deploy a microservices architecture across AWS and Azure.</li>
+                        <li><strong>Scripting:</strong> Experience in scripting with Python and Bash, automated CI/CD processes, managed cloud resources with AWS Boto and Azure SDKs.</li>
+                        <li><strong>Troubleshooting:</strong> Fixing app deployments by resolving connection issues, managing security rules, checking logs, and ensuring database connectivity.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Infosys Limited</h3>
+                    <h4>Systems Engineer (DevOps) | September 2019 - September 2021</h4>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Deployed a robust Azure infrastructure for Zoetis Animal Healthcare using Terraform and GitHub Actions, reducing setup time by 30% for faster project scalability.</li>
+                        <li>Improved development efficiency by 25% for Coca-Cola's Salesforce application through CI/CD management with AutoRabbit, streamlining Git operations and automating shell commands.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-12">
+            <h2 class="section-title">🚀 DevOps & Cloud Projects</h2>
+            <div class="card grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">Infrastructure Automation</h3>
+                    <p class="mb-3 text-gray-700">Built reusable infrastructure using Terraform & Terragrunt for multi-cloud (AWS & Azure).</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> Terraform, Terragrunt, AWS, Azure</p>
+                    <p class="text-sm text-green-600 font-medium">📦 Accelerated infra provisioning & minimized drift</p>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">3-Tier Microservices Deployment</h3>
+                    <p class="mb-3 text-gray-700">Deployed 3-tier microservices on EC2 with CI/CD, service discovery & load balancing.</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> AWS EC2, Nginx, Jenkins, Docker</p>
+                    <p class="text-sm text-green-600 font-medium">🌐 Enabled scalable, production-grade architecture</p>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">Automation Scripting</h3>
+                    <p class="mb-3 text-gray-700">Automated health checks, logs, and alerting using Python and Bash scripts.</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> Python, Bash, AWS CLI</p>
+                    <p class="text-sm text-green-600 font-medium">🔧 Reduced manual debugging time by 70%</p>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">App deployment with AWS ECS</h3>
+                    <p class="mb-3 text-gray-700">Deployed a React-Django GenAI reporting solution using AWS container services.</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> AWS ECS, Docker, Django, React, OpenAI API</p>
+                    <p class="text-sm text-green-600 font-medium">📊 Delivered automated reporting with intelligent summaries</p>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">OPA Gatekeeper Policy Management</h3>
+                    <p class="mb-3 text-gray-700">Implemented security policies with Gatekeeper in Kubernetes to enforce compliance.</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> Kubernetes, OPA Gatekeeper, YAML</p>
+                    <p class="text-sm text-green-600 font-medium">🔐 Improved cluster security & audit readiness</p>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">GitOps Deployment strategy</h3>
+                    <p class="mb-3 text-gray-700">Deployed Node.js app using GitOps practices via ArgoCD and automated pipelines.</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> GitHub, ArgoCD, Kubernetes</p>
+                    <p class="text-sm text-green-600 font-medium">🚀 Enabled version-controlled & declarative deployments</p>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">Deployments with Azure App Services</h3>
+                    <p class="mb-3 text-gray-700">Deployed microservices app with Azure DevOps CI/CD into App Services with monitoring.</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> Azure DevOps, App Services, Azure Monitor</p>
+                    <p class="text-sm text-green-600 font-medium">🌐 Delivered seamless cloud-native app rollout</p>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">Serverless Event-Driven App</h3>
+                    <p class="mb-3 text-gray-700">Built an event-driven architecture using AWS Lambda for scalable backend automation.</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> AWS Lambda, S3, DynamoDB, CloudWatch</p>
+                    <p class="text-sm text-green-600 font-medium">⚡ Reduced infra costs with event-based serverless execution</p>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">Azure Databricks Migration</h3>
+                    <p class="mb-3 text-gray-700">Performed subscription-wide migration of Databricks workspaces, datasets, and catalogs.</p>
+                    <p class="text-sm text-gray-600 mb-2"><strong>Tools:</strong> Azure Databricks, Azure CLI, PowerShell</p>
+                    <p class="text-sm text-green-600 font-medium">📥 Ensured seamless data continuity & cost optimization</p>
+                </div> 
+            </div>
+        </section>
+
+        <section id="certifications" class="mb-12">
+            <h2 class="section-title">Certifications</h2>
+            <div class="card text-center">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="skill-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c3.313 0 6 2.687 6 6s-2.687 6-6 6-6-2.687-6-6 2.687-6 6-6zm0 2c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z"/></svg>Certified Kubernetes Administrator</span>
+                    <span class="skill-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c3.313 0 6 2.687 6 6s-2.687 6-6 6-6-2.687-6-6 2.687-6 6-6zm0 2c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z"/></svg>AWS Cloud Practitioner</span>
+                    <span class="skill-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c3.313 0 6 2.687 6 6s-2.687 6-6 6-6-2.687-6-6 2.687-6 6-6zm0 2c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z"/></svg>Azure Admin Associate</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="mb-12">
+            <h2 class="section-title">Education</h2>
+            <div class="card">
+                <div class="experience-item">
+                    <h3>Chitkara University</h3>
+                    <h4>B.E. Computer Science | 2015-2019</h4>
+                    <p class="text-gray-700">CGPA : 8.71</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Mount Carmel Convent School</h3>
+                    <h4>Class 12th (CBSE) | 2013-2015</h4>
+                    <p class="text-gray-700">Percentage : 87</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Bhartiya Vidya Bhavan</h3>
+                    <h4>Class 10th (CBSE)</h4>
+                    <p class="text-gray-700">CGPA : 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="card contact-info text-center">
+                <p class="text-lg text-gray-700 mb-2">I'm actively seeking new opportunities. Feel free to reach out!</p>
+                <p class="text-xl font-semibold mb-4">
+                    <a href="mailto:bansal.rohan2567@gmail.com" class="mr-4">bansal.rohan2567@gmail.com</a> |
+                    <a href="tel:+917009606673" class="ml-4">+91 7009606673</a>
+                </p>
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="https://github.com/bansalrb" target="_blank" class="text-gray-600 hover:text-blue-500 transition-colors">
+                        <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.493.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.294-1.552 3.302-1.23 3.302-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386C24 5.373 18.627 0 12 0z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/bansalrb" target="_blank" class="text-gray-600 hover:text-blue-500 transition-colors">
+                        <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5 1.11-2.5 2.48-2.5 2.48 1.119 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.85-7.61-11.025-3.484v-2.385z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Rohan Bansal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
