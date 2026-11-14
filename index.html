@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
 
 <head>
 
-<meta charset="UTF-8">
+<meta charset="utf-8">
 
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0"
+  content="width=device-width,initial-scale=1"
 >
 
 <title>
@@ -16,14 +16,18 @@ Rohan Bansal | Senior DevOps & Cloud Platform Engineer
 
 <meta
   name="description"
-  content="Senior DevOps and Cloud Platform Engineer with 6+ years of experience across Azure, AWS, Kubernetes, Terraform, CI/CD, GitOps and Platform Engineering."
+  content="Senior DevOps and Cloud Platform Engineer with 6+ years building reusable Terraform, CI/CD and Kubernetes platforms across Azure and AWS."
 >
 
-<meta name="author" content="Rohan Bansal">
+<meta
+  name="theme-color"
+  content="#090d12"
+>
 
-<meta name="theme-color" content="#080c10">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
 
 <link
   rel="preconnect"
@@ -32,170 +36,173 @@ Rohan Bansal | Senior DevOps & Cloud Platform Engineer
 >
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
   rel="stylesheet"
 >
 
 <style>
 
-/* =========================================================
-   DESIGN SYSTEM
-   ========================================================= */
+/* ==========================================================
+   THEME
+   ========================================================== */
 
 :root {
 
-  --bg: #080c10;
-  --bg2: #0c1218;
+  --bg:#090d12;
+  --panel:#111820;
+  --panel2:#17212b;
+  --line:#26313c;
 
-  --surface: rgba(18, 25, 33, .82);
-  --surface-solid: #111820;
-  --surface2: #17202a;
+  --text:#edf3f7;
+  --soft:#c6d0d9;
+  --muted:#8b98a5;
 
-  --border: rgba(255,255,255,.09);
+  --green:#43d6a1;
+  --green2:#21a97a;
 
-  --text: #edf3f7;
-  --soft: #c0cad3;
-  --muted: #7f8c98;
+  --blue:#68b8ff;
+  --amber:#e6b84d;
 
-  --green: #3fd39d;
-  --green2: #20aa7b;
+  --glow:rgba(67,214,161,.14);
 
-  --blue: #68b8ff;
-  --purple: #a78bfa;
-
-  --glow: rgba(63,211,157,.16);
-
-  --radius: 14px;
+  --radius:12px;
 
 }
 
 [data-theme="light"] {
 
-  --bg: #eef3f5;
-  --bg2: #f8fafb;
+  --bg:#f3f6f8;
+  --panel:#ffffff;
+  --panel2:#edf2f5;
+  --line:#d6dfe5;
 
-  --surface: rgba(255,255,255,.86);
-  --surface-solid: white;
-  --surface2: #f1f5f7;
+  --text:#182027;
+  --soft:#35444f;
+  --muted:#62717e;
 
-  --border: rgba(20,35,45,.12);
+  --green:#13835c;
+  --green2:#0e6849;
 
-  --text: #182027;
-  --soft: #35434e;
-  --muted: #64727e;
+  --blue:#0969da;
+  --amber:#9a6700;
 
-  --green: #168762;
-  --green2: #106d50;
-
-  --blue: #0969da;
-  --purple: #7657c8;
-
-  --glow: rgba(22,135,98,.10);
+  --glow:rgba(19,131,92,.10);
 
 }
 
-/* =========================================================
+/* ==========================================================
    RESET
-   ========================================================= */
+   ========================================================== */
 
 * {
 
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 
 }
 
 html {
 
-  scroll-behavior: smooth;
-  scroll-padding-top: 65px;
+  scroll-behavior:smooth;
+  scroll-padding-top:58px;
 
 }
 
 body {
 
-  background: var(--bg);
-  color: var(--text);
+  background:var(--bg);
+  color:var(--text);
 
-  font-family: Inter, sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
 
-  font-size: 14px;
-  line-height: 1.55;
+  font-size:14px;
+  line-height:1.48;
 
-  overflow-x: hidden;
+  overflow-x:hidden;
 
 }
 
 a {
 
-  color: inherit;
-  text-decoration: none;
+  color:inherit;
+  text-decoration:none;
 
 }
 
 button {
 
-  font-family: inherit;
+  font:inherit;
 
 }
 
 ::selection {
 
-  background: var(--green);
-  color: #03130d;
+  background:var(--green);
+  color:#03130d;
 
 }
 
-/* =========================================================
+/* ==========================================================
+   PAGE WIDTH
+   ========================================================== */
+
+.wrap {
+
+  width:min(
+    1520px,
+    calc(100% - 36px)
+  );
+
+  margin:auto;
+
+}
+
+/* ==========================================================
    ANIMATED BACKGROUND
-   ========================================================= */
+   ========================================================== */
 
-.bg-grid {
+.grid-bg {
 
-  position: fixed;
+  position:fixed;
 
-  inset: 0;
+  inset:0;
 
-  z-index: -3;
+  z-index:-3;
 
-  pointer-events: none;
+  pointer-events:none;
 
   background-image:
 
     linear-gradient(
-      rgba(100,150,170,.04) 1px,
+      rgba(110,150,170,.035) 1px,
       transparent 1px
     ),
 
     linear-gradient(
       90deg,
-      rgba(100,150,170,.04) 1px,
+      rgba(110,150,170,.035) 1px,
       transparent 1px
     );
 
-  background-size: 42px 42px;
+  background-size:
+    42px 42px;
 
   mask-image:
     linear-gradient(
-      to bottom,
-      black,
-      transparent 75%
+      #000,
+      transparent 78%
     );
 
   animation:
-    gridMove 18s linear infinite;
+    gridMove 20s linear infinite;
 
 }
 
 @keyframes gridMove {
-
-  from {
-
-    background-position:
-      0 0;
-
-  }
 
   to {
 
@@ -206,46 +213,54 @@ button {
 
 }
 
+/* ==========================================================
+   AMBIENT ORBS
+   ========================================================== */
+
 .orb {
 
-  position: fixed;
+  position:fixed;
 
-  width: 600px;
-  height: 600px;
+  width:520px;
+  height:520px;
 
-  border-radius: 50%;
+  border-radius:50%;
 
-  filter: blur(120px);
+  filter:blur(120px);
 
-  opacity: .11;
+  opacity:.10;
 
-  pointer-events: none;
+  pointer-events:none;
 
-  z-index: -2;
+  z-index:-2;
 
 }
 
 .orb.one {
 
-  background: var(--green);
+  background:var(--green);
 
-  top: -320px;
-  left: -180px;
+  top:-300px;
+  left:-160px;
 
   animation:
-    orbOne 12s ease-in-out infinite alternate;
+    orbOne 13s
+    ease-in-out
+    infinite alternate;
 
 }
 
 .orb.two {
 
-  background: var(--blue);
+  background:var(--blue);
 
-  right: -260px;
-  top: 250px;
+  right:-300px;
+  top:220px;
 
   animation:
-    orbTwo 15s ease-in-out infinite alternate;
+    orbTwo 16s
+    ease-in-out
+    infinite alternate;
 
 }
 
@@ -255,8 +270,8 @@ button {
 
     transform:
       translate(
-        200px,
-        140px
+        180px,
+        110px
       );
 
   }
@@ -269,30 +284,30 @@ button {
 
     transform:
       translate(
-        -160px,
-        160px
+        -140px,
+        130px
       );
 
   }
 
 }
 
-/* =========================================================
+/* ==========================================================
    MOUSE SPOTLIGHT
-   ========================================================= */
+   ========================================================== */
 
 .spotlight {
 
-  position: fixed;
+  position:fixed;
 
-  width: 500px;
-  height: 500px;
+  width:460px;
+  height:460px;
 
-  border-radius: 50%;
+  border-radius:50%;
 
-  pointer-events: none;
+  pointer-events:none;
 
-  z-index: -1;
+  z-index:-1;
 
   transform:
     translate(
@@ -304,62 +319,47 @@ button {
 
     radial-gradient(
       circle,
-      rgba(63,211,157,.075),
-      transparent 65%
+      rgba(67,214,161,.07),
+      transparent 67%
     );
 
 }
 
-/* =========================================================
-   WRAPPER
-   ========================================================= */
-
-.wrap {
-
-  width:
-    min(
-      1380px,
-      calc(100% - 64px)
-    );
-
-  margin: auto;
-
-}
-
-/* =========================================================
-   NAV
-   ========================================================= */
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
 
 header {
 
-  position: sticky;
+  position:sticky;
 
-  top: 0;
+  top:0;
 
-  z-index: 100;
-
-  backdrop-filter:
-    blur(18px);
+  z-index:100;
 
   background:
     color-mix(
       in srgb,
-      var(--bg) 75%,
+      var(--bg) 78%,
       transparent
     );
 
+  backdrop-filter:
+    blur(16px);
+
   border-bottom:
-    1px solid var(--border);
+    1px solid
+    var(--line);
 
 }
 
 .nav {
 
-  height: 56px;
+  height:54px;
 
-  display: flex;
+  display:flex;
 
-  align-items: center;
+  align-items:center;
 
   justify-content:
     space-between;
@@ -368,111 +368,96 @@ header {
 
 .brand {
 
-  font-family:
+  font:
+    700 14px
     "JetBrains Mono",
     monospace;
 
-  font-weight: 700;
-
 }
 
-.brand span {
+.brand em {
 
-  color: var(--green);
+  font-style:normal;
+
+  color:var(--green);
 
 }
 
 .nav-links {
 
-  display: flex;
+  display:flex;
 
-  gap: 4px;
+  gap:3px;
 
 }
 
 .nav-links a {
 
-  color: var(--muted);
-
-  font-size: 12.5px;
-
   padding:
-    6px 11px;
+    6px 10px;
 
-  border-radius:
-    7px;
+  border-radius:7px;
 
-  transition: .15s;
+  color:var(--muted);
+
+  font-size:12.5px;
 
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
 
-  color: var(--text);
+  color:var(--text);
 
-  background:
-    var(--surface2);
+  background:var(--panel2);
 
 }
 
 .nav-actions {
 
-  display: flex;
+  display:flex;
 
-  align-items: center;
-
-  gap: 7px;
+  gap:7px;
 
 }
 
-/* =========================================================
+/* ==========================================================
    BUTTONS
-   ========================================================= */
+   ========================================================== */
 
 .btn {
 
-  height: 38px;
+  height:36px;
 
-  display:
-    inline-flex;
+  display:inline-flex;
 
-  align-items:
-    center;
+  align-items:center;
 
-  justify-content:
-    center;
+  justify-content:center;
 
-  gap: 7px;
+  gap:7px;
 
   padding:
-    0 15px;
+    0 13px;
 
   border:
     1px solid
-    var(--border);
+    var(--line);
 
-  border-radius:
-    9px;
+  border-radius:8px;
 
-  background:
-    var(--surface);
+  background:var(--panel);
 
-  color:
-    var(--text);
+  color:var(--text);
 
-  font-size:
-    12.5px;
+  font-size:12px;
 
-  font-weight:
-    600;
+  font-weight:700;
 
-  cursor:
-    pointer;
+  cursor:pointer;
 
   transition:
-    transform .15s,
-    border-color .15s,
-    box-shadow .15s;
+    .2s;
 
 }
 
@@ -488,18 +473,17 @@ header {
 
 .btn.primary {
 
-  color:
-    #042117;
-
   background:
+
     linear-gradient(
       135deg,
       var(--green),
-      #52e8b2
+      #69e6b9
     );
 
-  border-color:
-    transparent;
+  border-color:transparent;
+
+  color:#042117;
 
 }
 
@@ -507,492 +491,348 @@ header {
 
   box-shadow:
     0 8px 30px
-    rgba(63,211,157,.25);
+    rgba(67,214,161,.2);
 
 }
 
 .icon-btn {
 
-  width: 38px;
-  height: 38px;
+  width:36px;
 
-  display: grid;
-
-  place-items: center;
-
-  background:
-    var(--surface);
-
-  color:
-    var(--muted);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    9px;
-
-  cursor: pointer;
-
-}
-
-.icon-btn:hover {
-
-  color:
-    var(--green);
-
-  border-color:
-    var(--green);
+  padding:0;
 
 }
 
 .icon-btn svg,
 .btn svg {
 
-  width: 15px;
-  height: 15px;
+  width:15px;
+  height:15px;
 
 }
 
-/* =========================================================
-   TOP DASHBOARD
-   ========================================================= */
+/* ==========================================================
+   HERO DASHBOARD
+   ========================================================== */
 
-.top-dashboard {
+.dashboard {
 
   min-height:
-    calc(100vh - 56px);
+    calc(
+      100vh - 54px
+    );
 
-  padding:
-    30px 0 22px;
-
-  display: grid;
+  display:grid;
 
   grid-template-columns:
-    1fr .91fr;
+    1.04fr .96fr;
 
   grid-template-rows:
     auto auto;
 
   gap:
-    14px 24px;
+    14px 20px;
 
-  align-content:
-    center;
+  align-content:center;
+
+  padding:
+    24px 0 18px;
 
 }
 
-/* =========================================================
+/* ==========================================================
    HERO
-   ========================================================= */
+   ========================================================== */
 
-.hero-copy {
+.hero {
 
   animation:
-    slideUp .7s ease both;
+    slideUp
+    .7s ease both;
 
 }
 
-.available {
+.status {
 
-  display:
-    inline-flex;
+  display:inline-flex;
 
-  align-items:
-    center;
+  align-items:center;
 
-  gap: 7px;
+  gap:7px;
 
-  color:
-    var(--green);
-
-  background:
-    var(--green-soft);
+  padding:
+    3px 10px;
 
   border:
     1px solid
     color-mix(
       in srgb,
-      var(--green) 35%,
+      var(--green) 38%,
       transparent
     );
 
-  border-radius:
-    100px;
+  border-radius:99px;
 
-  padding:
-    4px 11px;
+  background:var(--glow);
 
-  font-size:
-    11.5px;
+  color:var(--green);
+
+  font-size:11.5px;
 
 }
 
-.available-dot {
+.status-dot {
 
-  width:
-    6px;
+  width:6px;
+  height:6px;
 
-  height:
-    6px;
+  border-radius:50%;
 
-  border-radius:
-    50%;
-
-  background:
-    var(--green);
+  background:var(--green);
 
   box-shadow:
     0 0 8px
     var(--green);
 
   animation:
-    pulse 1.8s infinite;
+    pulse
+    1.8s infinite;
 
 }
 
-@keyframes pulse {
-
-  50% {
-
-    opacity: .35;
-
-  }
-
-}
-
-.hero-copy h1 {
+.hero h1 {
 
   font-size:
     clamp(
-      38px,
-      5vw,
-      62px
+      40px,
+      4.7vw,
+      64px
     );
 
-  line-height:
-    1;
+  line-height:1;
 
   letter-spacing:
     -.045em;
 
   margin:
-    13px 0 6px;
+    12px 0 5px;
 
 }
 
-.hero-role {
+.role {
 
   font-size:
     clamp(
       17px,
-      2vw,
+      1.8vw,
       21px
     );
 
-  font-weight:
-    600;
+  font-weight:650;
 
-  color:
-    var(--green);
+  color:var(--green);
 
 }
 
-.hero-desc {
+.lead {
 
-  color:
-    var(--soft);
+  max-width:700px;
 
-  font-size:
-    15.5px;
+  color:var(--soft);
 
-  max-width:
-    650px;
+  font-size:15px;
 
   margin:
-    13px 0 16px;
+    12px 0 14px;
 
 }
 
-.hero-cta {
+.ctas {
 
-  display:
-    flex;
+  display:flex;
 
-  flex-wrap:
-    wrap;
+  flex-wrap:wrap;
+
+  gap:7px;
+
+}
+
+.meta {
+
+  display:flex;
+
+  flex-wrap:wrap;
 
   gap:
-    8px;
+    7px 17px;
+
+  color:var(--muted);
+
+  font-size:11.5px;
+
+  margin-top:12px;
 
 }
 
-.hero-mini {
+/* ==========================================================
+   ENGINEERING SNAPSHOT
+   ========================================================== */
 
-  display:
-    flex;
+.snapshot {
 
-  flex-wrap:
-    wrap;
+  background:var(--panel);
 
-  gap:
-    8px 18px;
+  border:
+    1px solid var(--line);
 
-  color:
-    var(--muted);
+  border-radius:var(--radius);
 
-  font-size:
-    11.5px;
+  padding:
+    17px 19px;
 
-  margin-top:
-    13px;
+  animation:
+    slideUp
+    .7s .10s
+    ease both;
 
 }
 
-/* =========================================================
-   TERMINAL
-   ========================================================= */
+.snapshot-head {
 
-.terminal {
+  display:flex;
 
-  align-self:
-    stretch;
+  justify-content:
+    space-between;
 
-  display:
-    flex;
+  align-items:center;
 
-  flex-direction:
-    column;
+  margin-bottom:13px;
 
-  background:
-    var(--surface);
+}
 
-  backdrop-filter:
-    blur(15px);
+.snapshot-head b {
+
+  font:
+    650 12px
+    "JetBrains Mono",
+    monospace;
+
+  color:var(--blue);
+
+}
+
+.snapshot-head span {
+
+  font:
+    10.5px
+    "JetBrains Mono",
+    monospace;
+
+  color:var(--muted);
+
+}
+
+.snapshot-grid {
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:8px;
+
+}
+
+.snapshot-item {
+
+  padding:
+    9px 11px;
 
   border:
     1px solid
-    var(--border);
+    var(--line);
 
-  border-radius:
-    14px;
+  border-radius:9px;
 
-  overflow:
-    hidden;
+  background:var(--panel2);
 
-  animation:
-    slideUp .7s .12s
-    ease both;
-
-  box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.18);
+  transition:.2s;
 
 }
 
-.term-top {
+.snapshot-item:hover {
 
-  height:
-    34px;
+  transform:
+    translateY(-2px);
 
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  gap:
-    6px;
-
-  padding:
-    0 13px;
-
-  background:
-    var(--surface2);
-
-  border-bottom:
-    1px solid
-    var(--border);
+  border-color:var(--green);
 
 }
 
-.term-dot {
+.snapshot-item small {
 
-  width:
-    9px;
+  display:block;
 
-  height:
-    9px;
-
-  border-radius:
-    50%;
-
-}
-
-.term-dot.red {
-  background:#ff5f56;
-}
-
-.term-dot.yellow {
-  background:#ffbd2e;
-}
-
-.term-dot.green {
-  background:#27c93f;
-}
-
-.term-label {
-
-  margin-left:
-    6px;
-
-  color:
-    var(--muted);
+  color:var(--muted);
 
   font:
-    11px
+    9.5px
     "JetBrains Mono",
     monospace;
 
 }
 
-.term-body {
+.snapshot-item b {
 
-  flex: 1;
+  display:block;
 
-  display:
-    flex;
+  margin-top:1px;
 
-  flex-direction:
-    column;
-
-  justify-content:
-    center;
-
-  padding:
-    17px 20px;
-
-  font:
-    12.5px/1.8
-    "JetBrains Mono",
-    monospace;
+  font-size:12.5px;
 
 }
 
-.command {
+/* ==========================================================
+   IMPACT METRICS
+   ========================================================== */
 
-  color:
-    var(--muted);
-
-}
-
-.command::before {
-
-  content:
-    "$ ";
-
-  color:
-    var(--green);
-
-}
-
-.term-row {
-
-  display:
-    flex;
-
-  gap:
-    7px;
-
-}
-
-.check {
-
-  color:
-    var(--green);
-
-}
-
-.cursor {
-
-  display:
-    inline-block;
-
-  width:
-    7px;
-
-  height:
-    14px;
-
-  background:
-    var(--green);
-
-  vertical-align:
-    -2px;
-
-  animation:
-    blink 1s
-    step-end infinite;
-
-}
-
-@keyframes blink {
-
-  50% {
-    opacity:0;
-  }
-
-}
-
-/* =========================================================
-   IMPACT
-   ========================================================= */
-
-.impact-strip {
+.impact {
 
   grid-column:
     1 / -1;
 
-  display:
-    grid;
+  display:grid;
 
   grid-template-columns:
     repeat(4,1fr);
 
-  gap:
-    8px;
+  gap:8px;
 
   animation:
-    slideUp .7s .22s
+    slideUp
+    .7s .2s
     ease both;
 
 }
 
 .metric {
 
-  position:
-    relative;
-
-  overflow:
-    hidden;
-
   padding:
-    13px 16px;
+    11px 14px;
 
-  background:
-    var(--surface);
+  background:var(--panel);
 
   border:
     1px solid
-    var(--border);
+    var(--line);
 
-  border-radius:
-    11px;
+  border-radius:10px;
 
-  transition:
-    transform .18s,
-    border-color .18s;
+  position:relative;
+
+  overflow:hidden;
+
+  transition:.2s;
 
 }
 
@@ -1005,7 +845,7 @@ header {
     color-mix(
       in srgb,
       var(--green) 55%,
-      var(--border)
+      var(--line)
     );
 
 }
@@ -1014,215 +854,159 @@ header {
 
   content:"";
 
-  position:
-    absolute;
+  position:absolute;
 
-  width:
-    80px;
+  width:70px;
+  height:70px;
 
-  height:
-    80px;
+  border-radius:50%;
 
-  border-radius:
-    50%;
+  right:-32px;
+  top:-35px;
 
-  right:
-    -35px;
+  background:var(--green);
 
-  top:
-    -40px;
+  filter:blur(28px);
 
-  background:
-    var(--green);
-
-  filter:
-    blur(35px);
-
-  opacity:
-    .14;
+  opacity:.15;
 
 }
 
-.metric-value {
-
-  color:
-    var(--green);
+.metric-number {
 
   font:
-    700 22px
+    700 20px
     "JetBrains Mono",
     monospace;
 
-}
-
-.metric-label {
-
-  color:
-    var(--muted);
-
-  font-size:
-    11.5px;
+  color:var(--green);
 
 }
 
-/* =========================================================
-   SECTION COMMON
-   ========================================================= */
+.metric span {
+
+  display:block;
+
+  color:var(--muted);
+
+  font-size:10.5px;
+
+}
+
+/* ==========================================================
+   SECTION SHARED
+   ========================================================== */
 
 section {
 
   padding:
-    24px 0;
+    21px 0;
 
 }
 
 .section-head {
 
-  display:
-    flex;
+  display:flex;
+
+  align-items:flex-end;
 
   justify-content:
     space-between;
 
-  align-items:
-    flex-end;
+  gap:10px;
 
-  gap:
-    10px;
-
-  margin-bottom:
-    11px;
+  margin-bottom:10px;
 
 }
 
-.cmd {
-
-  color:
-    var(--green);
+.command-label {
 
   font:
-    10.5px
+    10px
     "JetBrains Mono",
     monospace;
 
+  color:var(--green);
+
 }
 
-.cmd::before {
+.command-label::before {
 
-  content:
-    "$ ";
+  content:"$ ";
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
 }
 
 h2 {
 
-  font-size:
-    21px;
+  font-size:20px;
 
 }
 
 .section-caption {
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
-  font-size:
-    11.5px;
+  font-size:11px;
 
 }
 
-.reveal {
+/* ==========================================================
+   EXPERIENCE
+   ========================================================== */
 
-  opacity: 0;
+.experience {
 
-  transform:
-    translateY(18px);
-
-  transition:
-    opacity .55s ease,
-    transform .55s ease;
-
-}
-
-.reveal.visible {
-
-  opacity: 1;
-
-  transform:
-    translateY(0);
-
-}
-
-/* =========================================================
-   EXPERIENCE COMPACT
-   ========================================================= */
-
-.experience-layout {
-
-  display:
-    grid;
+  display:grid;
 
   grid-template-columns:
-    210px 1fr;
+    190px 1fr;
 
-  gap:
-    11px;
+  gap:10px;
 
 }
 
 .company-tabs {
 
-  display:
-    grid;
+  display:grid;
 
-  gap:
-    5px;
+  align-content:start;
 
-  align-content:
-    start;
+  gap:5px;
 
 }
 
 .company-tab {
 
-  text-align:
-    left;
+  text-align:left;
 
   padding:
-    8px 11px;
+    8px 10px;
 
-  color:
-    var(--muted);
+  background:transparent;
 
-  background:
-    transparent;
+  color:var(--muted);
 
   border:
-    1px solid
-    transparent;
+    1px solid transparent;
 
   border-left:
     3px solid
-    var(--border);
+    var(--line);
 
-  border-radius:
-    8px;
+  border-radius:8px;
 
-  cursor:
-    pointer;
+  cursor:pointer;
 
 }
 
 .company-tab.active {
 
-  background:
-    var(--surface);
+  background:var(--panel);
 
   border-color:
-    var(--border);
+    var(--line);
 
   border-left-color:
     var(--green);
@@ -1231,167 +1015,72 @@ h2 {
 
 .company-tab b {
 
-  display:
-    block;
+  display:block;
 
-  color:
-    var(--text);
+  color:var(--text);
 
-  font-size:
-    12.5px;
+  font-size:12px;
 
 }
 
 .company-tab.active b {
 
-  color:
-    var(--green);
+  color:var(--green);
 
 }
 
 .company-tab small {
 
-  font-size:
-    10.5px;
+  font-size:10px;
 
 }
 
-.exp-panel {
+/* ==========================================================
+   EXPERIENCE PANEL
+   ========================================================== */
 
-  background:
-    var(--surface);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    12px;
+.experience-panel {
 
   padding:
-    14px 17px;
+    13px 15px;
+
+  background:var(--panel);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:var(--radius);
 
 }
 
-.exp-panel.hidden {
+.experience-panel.hidden {
 
-  display:
-    none;
+  display:none;
 
 }
 
-.exp-heading {
+.experience-heading {
 
-  display:
-    flex;
+  display:flex;
 
   justify-content:
     space-between;
 
-  flex-wrap:
-    wrap;
+  gap:7px;
 
-  gap:
-    5px;
+  flex-wrap:wrap;
 
 }
 
-.exp-heading h3 {
+.experience-heading h3 {
 
-  font-size:
-    15px;
-
-}
-
-.exp-heading span {
-
-  color:
-    var(--muted);
-
-  font:
-    10.5px
-    "JetBrains Mono",
-    monospace;
+  font-size:14px;
 
 }
 
-.exp-org {
+.experience-date {
 
-  color:
-    var(--blue);
-
-  font-size:
-    12px;
-
-  margin:
-    2px 0 8px;
-
-}
-
-.exp-panel ul {
-
-  list-style:
-    none;
-
-  display:
-    grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:
-    6px 16px;
-
-}
-
-.exp-panel li {
-
-  position:
-    relative;
-
-  color:
-    var(--soft);
-
-  font-size:
-    12px;
-
-  line-height:
-    1.42;
-
-  padding-left:
-    14px;
-
-}
-
-.exp-panel li::before {
-
-  content:
-    "+";
-
-  position:
-    absolute;
-
-  left: 0;
-
-  color:
-    var(--green);
-
-}
-
-.exp-panel strong {
-
-  color:
-    var(--text);
-
-}
-
-.techline {
-
-  margin-top:
-    9px;
-
-  color:
-    var(--muted);
+  color:var(--muted);
 
   font:
     10px
@@ -1400,59 +1089,123 @@ h2 {
 
 }
 
-/* =========================================================
-   WORK + STACK DASHBOARD
-   ========================================================= */
+.experience-org {
 
-.work-grid {
+  color:var(--blue);
 
-  display:
-    grid;
+  font-size:11.5px;
 
-  grid-template-columns:
-    1.45fr .9fr;
-
-  gap:
-    11px;
+  margin:
+    2px 0 7px;
 
 }
 
-.projects {
+.experience-panel ul {
 
-  display:
-    grid;
+  list-style:none;
+
+  display:grid;
 
   grid-template-columns:
     1fr 1fr;
 
   gap:
-    8px;
+    5px 14px;
+
+}
+
+.experience-panel li {
+
+  position:relative;
+
+  padding-left:13px;
+
+  color:var(--soft);
+
+  font-size:11.5px;
+
+  line-height:1.38;
+
+}
+
+.experience-panel li::before {
+
+  content:"+";
+
+  position:absolute;
+
+  left:0;
+
+  color:var(--green);
+
+}
+
+.experience-panel strong {
+
+  color:var(--text);
+
+}
+
+.tech-line {
+
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font:
+    9.5px
+    "JetBrains Mono",
+    monospace;
+
+}
+
+/* ==========================================================
+   FEATURED WORK + STACK
+   ========================================================== */
+
+.work-layout {
+
+  display:grid;
+
+  grid-template-columns:
+    1.15fr .85fr;
+
+  gap:11px;
+
+}
+
+.box {
+
+  background:var(--panel);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:var(--radius);
+
+}
+
+/* ==========================================================
+   PROJECT GRID
+   ========================================================== */
+
+.projects {
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:7px;
 
 }
 
 .project {
 
-  position:
-    relative;
-
-  overflow:
-    hidden;
-
   padding:
-    12px 13px;
+    11px 12px;
 
-  background:
-    var(--surface);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    11px;
-
-  transition:
-    .18s;
+  transition:.2s;
 
 }
 
@@ -1461,8 +1214,7 @@ h2 {
   transform:
     translateY(-3px);
 
-  border-color:
-    var(--green);
+  border-color:var(--green);
 
 }
 
@@ -1475,421 +1227,322 @@ h2 {
 
     linear-gradient(
       135deg,
-      var(--green-soft),
+      var(--glow),
       transparent
     ),
 
-    var(--surface);
-
-}
-
-.project-top {
-
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  gap:
-    8px;
-
-}
-
-.project-icon {
-
-  width:
-    28px;
-
-  height:
-    28px;
-
-  display:
-    grid;
-
-  place-items:
-    center;
-
-  color:
-    var(--green);
-
-  background:
-    var(--green-soft);
-
-  border-radius:
-    7px;
-
-}
-
-.project-icon svg {
-
-  width:
-    14px;
-
-  height:
-    14px;
+    var(--panel);
 
 }
 
 .project h3 {
 
-  font-size:
-    12.5px;
+  font-size:12px;
 
 }
 
 .project p {
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
-  font-size:
-    11.5px;
+  font-size:10.8px;
 
-  line-height:
-    1.42;
+  line-height:1.38;
 
-  margin-top:
-    4px;
+  margin-top:3px;
 
 }
 
-.result {
+.project-result {
 
-  color:
-    var(--green);
+  color:var(--green);
 
-  font-size:
-    10.5px;
+  font-size:10px;
 
-  margin-top:
-    5px;
+  margin-top:4px;
 
 }
 
-.hidden-project {
+/* ==========================================================
+   STACK
+   ========================================================== */
 
-  display:
-    none;
-
-}
-
-/* =========================================================
-   STACK PANEL
-   ========================================================= */
-
-.stack-panel {
-
-  background:
-    var(--surface);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    12px;
+.stack {
 
   padding:
-    13px 15px;
+    13px 14px;
 
 }
 
 .stack-title {
 
-  color:
-    var(--blue);
+  color:var(--blue);
 
   font:
-    600 10.5px
+    650 10.5px
     "JetBrains Mono",
     monospace;
 
-  margin-bottom:
-    8px;
+  margin-bottom:8px;
 
 }
 
 .stack-group {
 
-  margin-bottom:
-    8px;
+  margin-bottom:7px;
 
 }
 
 .stack-group:last-child {
 
-  margin-bottom:
-    0;
+  margin-bottom:0;
 
 }
 
 .stack-group b {
 
-  display:
-    block;
+  display:block;
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
   font:
-    9.5px
+    9px
     "JetBrains Mono",
     monospace;
 
-  margin-bottom:
-    3px;
+  margin-bottom:3px;
 
 }
 
 .pills {
 
-  display:
-    flex;
+  display:flex;
 
-  flex-wrap:
-    wrap;
+  flex-wrap:wrap;
 
-  gap:
-    4px;
+  gap:4px;
 
 }
 
 .pill {
 
-  background:
-    var(--surface2);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    5px;
-
   padding:
     2px 6px;
 
-  color:
-    var(--soft);
+  background:var(--panel2);
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:5px;
+
+  color:var(--soft);
 
   font:
-    9.5px
+    9px
     "JetBrains Mono",
     monospace;
 
 }
 
-/* =========================================================
-   LOWER ROW
-   ========================================================= */
+/* ==========================================================
+   BOTTOM DASHBOARD
+   ========================================================== */
 
-.lower {
+.bottom {
 
-  display:
-    grid;
+  display:grid;
 
   grid-template-columns:
     1fr 1fr;
 
-  gap:
-    10px;
+  gap:9px;
 
-  margin-top:
-    10px;
+  margin-top:9px;
 
 }
 
 .credentials,
 .contact {
 
-  background:
-    var(--surface);
-
-  border:
-    1px solid
-    var(--border);
-
-  border-radius:
-    12px;
-
   padding:
-    13px 15px;
+    12px 14px;
 
 }
 
 .mini-title {
 
-  color:
-    var(--green);
-
   font:
-    600 10.5px
+    650 10px
     "JetBrains Mono",
     monospace;
 
-  margin-bottom:
-    7px;
+  color:var(--green);
+
+  margin-bottom:7px;
 
 }
 
-.cert-grid {
+/* ==========================================================
+   CERTIFICATIONS
+   ========================================================== */
 
-  display:
-    grid;
+.certifications {
+
+  display:grid;
 
   grid-template-columns:
     repeat(4,1fr);
 
-  gap:
-    5px;
+  gap:5px;
 
 }
 
 .cert {
 
-  background:
-    var(--surface2);
+  padding:6px;
+
+  text-align:center;
+
+  background:var(--panel2);
 
   border:
     1px solid
-    var(--border);
+    var(--line);
 
-  border-radius:
-    7px;
-
-  padding:
-    7px;
-
-  text-align:
-    center;
+  border-radius:7px;
 
 }
 
 .cert b {
 
-  display:
-    block;
+  display:block;
 
-  color:
-    var(--text);
-
-  font-size:
-    11px;
+  font-size:10.5px;
 
 }
 
 .cert span {
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
-  font-size:
-    9px;
+  font-size:8.5px;
 
 }
 
-.education-line {
+.education {
 
-  padding-top:
-    8px;
+  margin-top:7px;
 
-  color:
-    var(--muted);
+  padding-top:7px;
 
-  font-size:
-    10.5px;
+  border-top:
+    1px solid
+    var(--line);
+
+  color:var(--muted);
+
+  font-size:10px;
+
+}
+
+.education strong {
+
+  color:var(--text);
 
 }
 
-.education-line strong {
-
-  color:
-    var(--text);
-
-}
+/* ==========================================================
+   CONTACT
+   ========================================================== */
 
 .contact {
 
-  display:
-    grid;
+  display:grid;
 
   grid-template-columns:
     1fr auto;
 
-  align-items:
-    center;
+  align-items:center;
 
-  gap:
-    12px;
+  gap:10px;
 
   background:
 
     linear-gradient(
       135deg,
-      var(--green-soft),
-      transparent 65%
+      var(--glow),
+      transparent 68%
     ),
 
-    var(--surface);
+    var(--panel);
 
 }
 
 .contact h3 {
 
-  font-size:
-    15px;
+  font-size:14px;
 
 }
 
 .contact p {
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
-  font-size:
-    10.5px;
+  font-size:10px;
 
-  margin-top:
-    2px;
+  margin-top:2px;
 
 }
 
-.contact-actions {
+.contact .nav-actions {
 
-  display:
-    flex;
-
-  gap:
-    6px;
+  flex-wrap:wrap;
 
 }
 
-/* =========================================================
+/* ==========================================================
    FOOTER
-   ========================================================= */
+   ========================================================== */
 
 footer {
 
-  text-align:
-    center;
+  text-align:center;
 
-  color:
-    var(--muted);
+  color:var(--muted);
 
   font:
-    9.5px
+    9px
     "JetBrains Mono",
     monospace;
 
-  padding:
-    15px;
+  padding:13px;
 
 }
 
-/* =========================================================
-   ANIMATION
-   ========================================================= */
+/* ==========================================================
+   REVEAL ANIMATION
+   ========================================================== */
+
+.reveal {
+
+  opacity:0;
+
+  transform:
+    translateY(15px);
+
+  transition:.55s;
+
+}
+
+.reveal.visible {
+
+  opacity:1;
+
+  transform:none;
+
+}
 
 @keyframes slideUp {
 
@@ -1906,122 +1559,44 @@ footer {
 
     opacity:1;
 
-    transform:
-      translateY(0);
+    transform:none;
 
   }
 
 }
 
-/* =========================================================
-   DESKTOP LARGE
-   ========================================================= */
+@keyframes pulse {
 
-@media (min-width: 1500px) {
+  50% {
+
+    opacity:.35;
+
+  }
+
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+   ========================================================== */
+
+@media (min-width:1500px) {
 
   .wrap {
 
-    width:
-      min(
-        1450px,
-        calc(100% - 90px)
-      );
+    width:min(
+      1520px,
+      calc(100% - 52px)
+    );
 
   }
 
 }
 
-/* =========================================================
+/* ==========================================================
    TABLET
-   ========================================================= */
+   ========================================================== */
 
-@media (max-width: 900px) {
-
-  .wrap {
-
-    width:
-      min(
-        100% - 32px,
-        900px
-      );
-
-  }
-
-  .nav-links {
-
-    display:
-      none;
-
-  }
-
-  .top-dashboard {
-
-    min-height:
-      auto;
-
-    grid-template-columns:
-      1fr;
-
-    padding-top:
-      25px;
-
-  }
-
-  .terminal {
-
-    display:
-      none;
-
-  }
-
-  .impact-strip {
-
-    grid-column:
-      1;
-
-  }
-
-  .experience-layout {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-  .company-tabs {
-
-    display:
-      flex;
-
-    overflow-x:
-      auto;
-
-  }
-
-  .company-tab {
-
-    min-width:
-      160px;
-
-    flex-shrink:
-      0;
-
-  }
-
-  .work-grid {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 620px) {
+@media (max-width:980px) {
 
   .wrap {
 
@@ -2030,56 +1605,106 @@ footer {
 
   }
 
-  .resume-text {
+  .nav-links {
 
-    display:
-      none;
-
-  }
-
-  .hero-copy h1 {
-
-    font-size:
-      38px;
+    display:none;
 
   }
 
-  .hero-role {
+  .dashboard {
 
-    font-size:
-      16px;
+    min-height:auto;
 
-  }
+    grid-template-columns:
+      1fr;
 
-  .hero-desc {
-
-    font-size:
-      14px;
+    padding-top:22px;
 
   }
 
-  .impact-strip {
+  .snapshot {
+
+    display:none;
+
+  }
+
+  .impact {
+
+    grid-column:1;
+
+  }
+
+  .work-layout {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .experience {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .company-tabs {
+
+    display:flex;
+
+    overflow-x:auto;
+
+  }
+
+  .company-tab {
+
+    min-width:150px;
+
+    flex-shrink:0;
+
+  }
+
+  .bottom {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width:620px) {
+
+  .hero h1 {
+
+    font-size:39px;
+
+  }
+
+  .role {
+
+    font-size:16px;
+
+  }
+
+  .lead {
+
+    font-size:14px;
+
+  }
+
+  .impact {
 
     grid-template-columns:
       1fr 1fr;
 
   }
 
-  .metric {
-
-    padding:
-      10px 12px;
-
-  }
-
-  .metric-value {
-
-    font-size:
-      18px;
-
-  }
-
-  .exp-panel ul {
+  .experience-panel ul {
 
     grid-template-columns:
       1fr;
@@ -2095,19 +1720,11 @@ footer {
 
   .project.featured {
 
-    grid-column:
-      auto;
+    grid-column:auto;
 
   }
 
-  .lower {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-  .cert-grid {
+  .certifications {
 
     grid-template-columns:
       1fr 1fr;
@@ -2121,24 +1738,39 @@ footer {
 
   }
 
+  .resume-word {
+
+    display:none;
+
+  }
+
+  .spotlight {
+
+    display:none;
+
+  }
+
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (
+  prefers-reduced-motion:reduce
+) {
 
   * {
 
-    animation:
-      none !important;
+    animation:none !important;
 
-    transition:
-      none !important;
+    transition:none !important;
 
   }
 
   html {
 
-    scroll-behavior:
-      auto;
+    scroll-behavior:auto;
 
   }
 
@@ -2150,21 +1782,24 @@ footer {
 
 <body>
 
-<div class="bg-grid"></div>
+<div class="grid-bg"></div>
 <div class="orb one"></div>
 <div class="orb two"></div>
 <div class="spotlight" id="spotlight"></div>
 
 <!-- ======================================================
-     NAV
+     NAVIGATION
      ====================================================== -->
 
 <header>
 
 <div class="wrap nav">
 
-<a class="brand" href="#top">
-rohan<span>@</span>devops
+<a
+  class="brand"
+  href="#top"
+>
+  rohan<em>@</em>devops
 </a>
 
 <nav class="nav-links">
@@ -2186,42 +1821,53 @@ Contact
 <div class="nav-actions">
 
 <button
-class="icon-btn"
-id="theme"
-type="button"
-aria-label="Toggle theme"
+  class="btn icon-btn"
+  id="themeButton"
+  type="button"
+  aria-label="Toggle light and dark theme"
 >
 
 <svg
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
 >
-<circle cx="12" cy="12" r="4"/>
-<path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+
+<circle
+  cx="12"
+  cy="12"
+  r="4"
+/>
+
+<path
+  d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+/>
+
 </svg>
 
 </button>
 
 <a
-class="btn primary"
-href="Rohan_Bansal_Senior_DevOps_Resume.pdf"
-download
+  class="btn primary"
+  href="Rohan_Bansal_Senior_DevOps_Resume.pdf"
+  download
 >
 
 <svg
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
 >
-<path d="M12 3v12"/>
-<path d="m7 10 5 5 5-5"/>
-<path d="M5 21h14"/>
+
+<path
+  d="M12 3v12M7 10l5 5 5-5M5 21h14"
+/>
+
 </svg>
 
-<span class="resume-text">
+<span class="resume-word">
 Resume
 </span>
 
@@ -2233,24 +1879,26 @@ Resume
 
 </header>
 
+<!-- ======================================================
+     MAIN
+     ====================================================== -->
+
 <main
-class="wrap"
-id="top"
+  class="wrap"
+  id="top"
 >
 
 <!-- ======================================================
-     SCREEN 1
+     DASHBOARD HERO
      ====================================================== -->
 
-<div class="top-dashboard">
+<div class="dashboard">
 
-<!-- HERO -->
+<div class="hero">
 
-<div class="hero-copy">
+<div class="status">
 
-<div class="available">
-
-<span class="available-dot"></span>
+<span class="status-dot"></span>
 
 Open to Senior DevOps / Platform roles
 
@@ -2260,11 +1908,11 @@ Open to Senior DevOps / Platform roles
 Rohan Bansal
 </h1>
 
-<div class="hero-role">
+<div class="role">
 Senior DevOps Engineer · Cloud Platform Engineer
 </div>
 
-<p class="hero-desc">
+<p class="lead">
 
 I engineer
 <strong>reusable cloud platforms</strong>
@@ -2273,219 +1921,227 @@ across
 modular Terraform,
 reusable CI/CD,
 Kubernetes,
-controlled production releases,
+controlled releases,
 multi-region DR,
-DevSecOps and FinOps.
+DevSecOps
+and FinOps.
 
 </p>
 
-<div class="hero-cta">
+<div class="ctas">
 
 <a
-href="Rohan_Bansal_Senior_DevOps_Resume.pdf"
-download
-class="btn primary"
+  class="btn primary"
+  href="Rohan_Bansal_Senior_DevOps_Resume.pdf"
+  download
 >
-
 Download Resume
-
 </a>
 
 <a
-href="mailto:bansal.rohan2567@gmail.com"
-class="btn"
+  class="btn"
+  href="mailto:bansal.rohan2567@gmail.com"
 >
-
 Email Me
-
 </a>
 
 <a
-href="https://linkedin.com/in/bansalrb"
-target="_blank"
-rel="noopener noreferrer"
-class="btn"
+  class="btn"
+  href="https://linkedin.com/in/bansalrb"
+  target="_blank"
+  rel="noopener noreferrer"
 >
-
 LinkedIn
-
 </a>
 
 <a
-href="https://github.com/bansalrb"
-target="_blank"
-rel="noopener noreferrer"
-class="btn"
+  class="btn"
+  href="https://github.com/bansalrb"
+  target="_blank"
+  rel="noopener noreferrer"
 >
-
 GitHub
-
 </a>
 
 </div>
 
-<div class="hero-mini">
+<div class="meta">
 
 <span>
-📍 India · Remote / relocation
-</span>
-
-<span>
-✓ CKA · AZ-104 · AWS · GH-300
-</span>
-
-</div>
-
-</div>
-
-<!-- TERMINAL -->
-
-<div class="terminal">
-
-<div class="term-top">
-
-<span class="term-dot red"></span>
-<span class="term-dot yellow"></span>
-<span class="term-dot green"></span>
-
-<span class="term-label">
-rohan@platform:~
-</span>
-
-</div>
-
-<div class="term-body">
-
-<div class="command">
-cat impact.log
-</div>
-
-<div class="term-row">
-
-<span class="check">
-[✓]
+India · Remote / relocation
 </span>
 
 <span>
-Multi-region Azure DR + zero-downtime releases
+CKA · AZ-104 · AWS CCP · GH-300
 </span>
 
 </div>
 
-<div class="term-row">
+</div>
 
-<span class="check">
-[✓]
-</span>
+<!-- ======================================================
+     ENGINEERING SNAPSHOT
+     ====================================================== -->
+
+<aside class="snapshot">
+
+<div class="snapshot-head">
+
+<b>
+engineering_snapshot.yaml
+</b>
 
 <span>
-20% cloud cost reduction through FinOps
+production profile
 </span>
 
 </div>
 
-<div class="term-row">
+<div class="snapshot-grid">
 
-<span class="check">
-[✓]
-</span>
+<div class="snapshot-item">
 
-<span>
-Up to 50% less manual infrastructure effort
-</span>
+<small>
+cloud
+</small>
 
-</div>
-
-<div class="term-row">
-
-<span class="check">
-[✓]
-</span>
-
-<span>
-Build-once / promote release engineering
-</span>
+<b>
+Azure · AWS
+</b>
 
 </div>
 
-<div
-class="command"
-style="margin-top:7px"
->
+<div class="snapshot-item">
 
-kubectl get career<span class="cursor"></span>
+<small>
+platform
+</small>
+
+<b>
+Terraform · Kubernetes
+</b>
+
+</div>
+
+<div class="snapshot-item">
+
+<small>
+delivery
+</small>
+
+<b>
+GitHub Actions · Azure DevOps
+</b>
+
+</div>
+
+<div class="snapshot-item">
+
+<small>
+reliability
+</small>
+
+<b>
+Multi-region DR · GitOps
+</b>
+
+</div>
+
+<div class="snapshot-item">
+
+<small>
+security
+</small>
+
+<b>
+DevSecOps · RBAC · Secrets
+</b>
+
+</div>
+
+<div class="snapshot-item">
+
+<small>
+data_ai
+</small>
+
+<b>
+Databricks · ADF · OpenAI
+</b>
 
 </div>
 
 </div>
 
-</div>
+</aside>
 
-<!-- IMPACT -->
+<!-- ======================================================
+     METRICS
+     ====================================================== -->
 
-<div class="impact-strip">
+<div class="impact">
 
 <div class="metric">
 
 <div
-class="metric-value counter"
-data-target="6"
-data-suffix="+"
+  class="metric-number counter"
+  data-number="6"
+  data-suffix="+"
 >
 0
 </div>
 
-<div class="metric-label">
+<span>
 years DevOps & Cloud
-</div>
+</span>
 
 </div>
 
 <div class="metric">
 
 <div
-class="metric-value counter"
-data-target="20"
-data-suffix="%"
+  class="metric-number counter"
+  data-number="20"
+  data-suffix="%"
 >
 0
 </div>
 
-<div class="metric-label">
+<span>
 Azure cost reduction
-</div>
+</span>
 
 </div>
 
 <div class="metric">
 
 <div
-class="metric-value counter"
-data-target="50"
-data-suffix="%"
+  class="metric-number counter"
+  data-number="50"
+  data-suffix="%"
 >
 0
 </div>
 
-<div class="metric-label">
+<span>
 less manual effort
-</div>
+</span>
 
 </div>
 
 <div class="metric">
 
 <div
-class="metric-value counter"
-data-target="35"
-data-suffix="%"
+  class="metric-number counter"
+  data-number="35"
+  data-suffix="%"
 >
 0
 </div>
 
-<div class="metric-label">
+<span>
 higher deployment frequency
-</div>
+</span>
 
 </div>
 
@@ -2498,15 +2154,15 @@ higher deployment frequency
      ====================================================== -->
 
 <section
-id="experience"
-class="reveal"
+  id="experience"
+  class="reveal"
 >
 
 <div class="section-head">
 
 <div>
 
-<div class="cmd">
+<div class="command-label">
 git log --career
 </div>
 
@@ -2522,13 +2178,15 @@ Select employer
 
 </div>
 
-<div class="experience-layout">
+<div class="experience">
+
+<!-- COMPANY TABS -->
 
 <div class="company-tabs">
 
 <button
-class="company-tab active"
-data-exp="cognizant"
+  class="company-tab active"
+  data-panel="cognizant"
 >
 
 <b>
@@ -2542,8 +2200,8 @@ Apr 2025 – Present
 </button>
 
 <button
-class="company-tab"
-data-exp="deloitte"
+  class="company-tab"
+  data-panel="deloitte"
 >
 
 <b>
@@ -2557,8 +2215,8 @@ Oct 2021 – Apr 2025
 </button>
 
 <button
-class="company-tab"
-data-exp="infosys"
+  class="company-tab"
+  data-panel="infosys"
 >
 
 <b>
@@ -2573,44 +2231,57 @@ Sep 2019 – Sep 2021
 
 </div>
 
-<!-- COGNIZANT -->
+<!-- ======================================================
+     COGNIZANT
+     ====================================================== -->
 
 <div
-class="exp-panel"
-id="cognizant"
+  class="experience-panel"
+  id="cognizant"
 >
 
-<div class="exp-heading">
+<div class="experience-heading">
 
 <h3>
 Senior DevOps Engineer / Infrastructure Specialist
 </h3>
 
-<span>
+<span class="experience-date">
 Apr 2025 – Present
 </span>
 
 </div>
 
-<div class="exp-org">
+<div class="experience-org">
+
 Cognizant · Optum / UnitedHealth Group
+
 </div>
 
 <ul>
 
 <li>
 
-<strong>Platform:</strong>
+<strong>
+Platform:
+</strong>
+
 Reusable Terraform modules for
-VMs, VMSS, App Gateway,
+VMs,
+VMSS,
+App Gateway,
 networking,
-Managed Identities and Key Vault.
+Managed Identities
+and Key Vault.
 
 </li>
 
 <li>
 
-<strong>DR:</strong>
+<strong>
+DR:
+</strong>
+
 Blue-green releases and
 active-passive multi-region DR
 using Azure Traffic Manager.
@@ -2619,28 +2290,37 @@ using Azure Traffic Manager.
 
 <li>
 
-<strong>Databricks:</strong>
+<strong>
+Databricks:
+</strong>
+
 VNet injection,
 Private Endpoints,
 Unity Catalog,
-RBAC and
-cross-subscription migration.
+RBAC
+and cross-subscription migration.
 
 </li>
 
 <li>
 
-<strong>Release Engineering:</strong>
+<strong>
+Release engineering:
+</strong>
+
 CI/CD for Databricks,
-Azure Functions and ADF
-using version-tagged
-build-once/promote releases.
+Functions
+and ADF
+using build-once/promote releases.
 
 </li>
 
 <li>
 
-<strong>Automation:</strong>
+<strong>
+Automation:
+</strong>
+
 Python/Bash reduced
 manual effort by 40%.
 
@@ -2648,16 +2328,18 @@ manual effort by 40%.
 
 <li>
 
-<strong>FinOps:</strong>
-Right-sizing,
-cleanup and governance
+<strong>
+FinOps:
+</strong>
+
+Right-sizing and cleanup
 drove 20% Azure cost reduction.
 
 </li>
 
 </ul>
 
-<div class="techline">
+<div class="tech-line">
 
 Azure · Terraform · GitHub Actions ·
 Databricks · ADF · Traffic Manager ·
@@ -2667,26 +2349,28 @@ ServiceNow
 
 </div>
 
-<!-- DELOITTE -->
+<!-- ======================================================
+     DELOITTE
+     ====================================================== -->
 
 <div
-class="exp-panel hidden"
-id="deloitte"
+  class="experience-panel hidden"
+  id="deloitte"
 >
 
-<div class="exp-heading">
+<div class="experience-heading">
 
 <h3>
 DevOps Engineer
 </h3>
 
-<span>
+<span class="experience-date">
 Oct 2021 – Apr 2025
 </span>
 
 </div>
 
-<div class="exp-org">
+<div class="experience-org">
 HashedIn by Deloitte
 </div>
 
@@ -2694,31 +2378,47 @@ HashedIn by Deloitte
 
 <li>
 
-<strong>IaC:</strong>
-Reusable Terraform/Terragrunt
-architecture across AWS and Azure.
+<strong>
+IaC:
+</strong>
+
+Reusable Terraform/Terragrunt architecture
+across AWS and Azure.
 
 </li>
 
 <li>
 
-<strong>Delivery:</strong>
+<strong>
+Delivery:
+</strong>
+
 Reusable GitHub Actions,
-Azure DevOps and CodePipeline workflows.
+Azure DevOps
+and CodePipeline workflows.
 
 </li>
 
 <li>
 
-<strong>Containers:</strong>
-Docker workloads across
-ECS, EKS, AKS and Kubernetes.
+<strong>
+Containers:
+</strong>
+
+Docker workloads
+across ECS,
+EKS,
+AKS
+and Kubernetes.
 
 </li>
 
 <li>
 
-<strong>AI Platform:</strong>
+<strong>
+AI platform:
+</strong>
+
 Azure OpenAI infrastructure
 and CI/CD for LLM applications.
 
@@ -2726,24 +2426,30 @@ and CI/CD for LLM applications.
 
 <li>
 
-<strong>DevSecOps:</strong>
+<strong>
+DevSecOps:
+</strong>
+
 Fortify,
-Trivy and Mend OSS
-delivery gates.
+Trivy
+and Mend OSS delivery gates.
 
 </li>
 
 <li>
 
-<strong>Automation:</strong>
-Python/Boto3 workflows
+<strong>
+Automation:
+</strong>
+
+Python/Boto3
 cut manual operations by 50%.
 
 </li>
 
 </ul>
 
-<div class="techline">
+<div class="tech-line">
 
 AWS · Azure · Terraform · Terragrunt ·
 Kubernetes · EKS · ECS · GitHub Actions ·
@@ -2753,26 +2459,28 @@ Prometheus
 
 </div>
 
-<!-- INFOSYS -->
+<!-- ======================================================
+     INFOSYS
+     ====================================================== -->
 
 <div
-class="exp-panel hidden"
-id="infosys"
+  class="experience-panel hidden"
+  id="infosys"
 >
 
-<div class="exp-heading">
+<div class="experience-heading">
 
 <h3>
 Systems Engineer – DevOps
 </h3>
 
-<span>
+<span class="experience-date">
 Sep 2019 – Sep 2021
 </span>
 
 </div>
 
-<div class="exp-org">
+<div class="experience-org">
 Infosys Limited
 </div>
 
@@ -2780,26 +2488,33 @@ Infosys Limited
 
 <li>
 
-<strong>Azure:</strong>
+<strong>
+Azure:
+</strong>
+
 Terraform and Azure Pipelines
-for Zoetis infrastructure,
-networking and repeatable environments.
+for Zoetis infrastructure
+and repeatable environments.
 
 </li>
 
 <li>
 
-<strong>CI/CD:</strong>
+<strong>
+CI/CD:
+</strong>
+
 Salesforce release automation
-for Coca-Cola using
+for Coca-Cola with
 AutoRabbit,
-Git and shell scripting.
+Git
+and Bash.
 
 </li>
 
 </ul>
 
-<div class="techline">
+<div class="tech-line">
 
 Azure · Terraform · Azure Pipelines ·
 TFS · Git · Bash
@@ -2813,84 +2528,65 @@ TFS · Git · Bash
 </section>
 
 <!-- ======================================================
-     WORK DASHBOARD
+     FEATURED WORK
      ====================================================== -->
 
 <section
-id="work"
-class="reveal"
+  id="work"
+  class="reveal"
 >
 
 <div class="section-head">
 
 <div>
 
-<div class="cmd">
+<div class="command-label">
 ls ./platform-work
 </div>
 
 <h2>
-Featured Work
+Featured Work + Stack
 </h2>
 
 </div>
 
 <div class="section-caption">
-Selected engineering work
+Selected production engineering
 </div>
 
 </div>
 
-<div class="work-grid">
+<div class="work-layout">
 
-<!-- PROJECTS -->
+<!-- ======================================================
+     PROJECTS
+     ====================================================== -->
 
 <div class="projects">
 
-<article class="project featured">
-
-<div class="project-top">
-
-<div class="project-icon">
-
-<svg
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
->
-
-<path d="M12 2 2 7l10 5 10-5-10-5z"/>
-<path d="m2 17 10 5 10-5"/>
-<path d="M2 12l10 5 10-5"/>
-
-</svg>
-
-</div>
+<article class="project box featured">
 
 <h3>
 Multi-Cloud Terraform Platform
 </h3>
 
-</div>
-
 <p>
 
-Reusable Terraform/Terragrunt
-architecture used across
-AWS and Azure projects
-with remote state and
-environment-driven configuration.
+Reusable Terraform/Terragrunt architecture
+across AWS and Azure with remote state
+and environment-driven configuration.
 
 </p>
 
-<div class="result">
+<div class="project-result">
+
 → Faster provisioning · less drift
+
 </div>
 
 </article>
 
-<article class="project">
+<article class="project box">
 
 <h3>
 Reusable GitHub Actions
@@ -2898,40 +2594,42 @@ Reusable GitHub Actions
 
 <p>
 
-Shared workflows for IaC,
+Shared workflows for
+IaC,
 security,
 deployment,
-cleanup and reporting.
+cleanup
+and reporting.
 
 </p>
 
-<div class="result">
-→ Standardized team delivery
+<div class="project-result">
+→ Standardized delivery
 </div>
 
 </article>
 
-<article class="project">
+<article class="project box">
 
 <h3>
-Blue-Green + Multi-Region DR
+Azure Blue-Green + DR
 </h3>
 
 <p>
 
-On-prem ArcGIS migrated
-to Azure using
-Traffic Manager and Terraform.
+ArcGIS migration with
+Traffic Manager
+and active-passive failover.
 
 </p>
 
-<div class="result">
+<div class="project-result">
 → Zero-downtime releases
 </div>
 
 </article>
 
-<article class="project">
+<article class="project box">
 
 <h3>
 Databricks Release Engineering
@@ -2940,18 +2638,18 @@ Databricks Release Engineering
 <p>
 
 Version-tagged Databricks,
-ADF and Function App
-promotion across environments.
+ADF
+and Function App promotion.
 
 </p>
 
-<div class="result">
+<div class="project-result">
 → Traceable rollback
 </div>
 
 </article>
 
-<article class="project">
+<article class="project box">
 
 <h3>
 GitOps Kubernetes Platform
@@ -2959,8 +2657,8 @@ GitOps Kubernetes Platform
 
 <p>
 
-Argo CD deployments with
-OPA Gatekeeper
+Argo CD deployments
+with OPA Gatekeeper
 policy enforcement.
 
 </p>
@@ -2969,9 +2667,11 @@ policy enforcement.
 
 </div>
 
-<!-- STACK -->
+<!-- ======================================================
+     STACK
+     ====================================================== -->
 
-<div class="stack-panel">
+<aside class="stack box">
 
 <div class="stack-title">
 stack.yaml
@@ -3150,7 +2850,7 @@ ADF
 </span>
 
 <span class="pill">
-Azure Functions
+Functions
 </span>
 
 <span class="pill">
@@ -3161,23 +2861,23 @@ Azure OpenAI
 
 </div>
 
-</div>
+</aside>
 
 </div>
 
 <!-- ======================================================
-     CERTIFICATIONS + CONTACT
+     CREDENTIALS + CONTACT
      ====================================================== -->
 
-<div class="lower">
+<div class="bottom">
 
-<div class="credentials">
+<div class="credentials box">
 
 <div class="mini-title">
 credentials
 </div>
 
-<div class="cert-grid">
+<div class="certifications">
 
 <div class="cert">
 
@@ -3229,7 +2929,7 @@ GitHub
 
 </div>
 
-<div class="education-line">
+<div class="education">
 
 <strong>
 B.E. Computer Science
@@ -3243,8 +2943,8 @@ CGPA 8.71/10
 </div>
 
 <div
-class="contact"
-id="contact"
+  class="contact box"
+  id="contact"
 >
 
 <div>
@@ -3260,33 +2960,29 @@ Let's build reliable platforms.
 <p>
 
 Open to Senior DevOps,
-Cloud Platform and
-Platform Engineering roles.
+Cloud Platform
+and Platform Engineering roles.
 
 </p>
 
 </div>
 
-<div class="contact-actions">
+<div class="nav-actions">
 
 <a
-href="mailto:bansal.rohan2567@gmail.com"
-class="btn primary"
+  class="btn primary"
+  href="mailto:bansal.rohan2567@gmail.com"
 >
-
 Email
-
 </a>
 
 <a
-href="https://linkedin.com/in/bansalrb"
-target="_blank"
-rel="noopener noreferrer"
-class="btn"
+  class="btn"
+  href="https://linkedin.com/in/bansalrb"
+  target="_blank"
+  rel="noopener noreferrer"
 >
-
 LinkedIn
-
 </a>
 
 </div>
@@ -3299,79 +2995,74 @@ LinkedIn
 
 </main>
 
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+
 <footer>
 
 ©
 <span id="year"></span>
+
 Rohan Bansal ·
 Senior DevOps / Cloud Platform Engineer
 
 </footer>
 
 <!-- ======================================================
-     SCRIPT
+     JAVASCRIPT
      ====================================================== -->
 
 <script>
 
 /* =========================================================
-   COPYRIGHT
+   YEAR
    ========================================================= */
 
 document
-.getElementById("year")
-.textContent =
-new Date().getFullYear();
+  .getElementById("year")
+  .textContent =
+  new Date().getFullYear();
 
 
 /* =========================================================
    THEME
    ========================================================= */
 
-const themeButton =
-document.getElementById("theme");
-
 const root =
-document.documentElement;
+  document.documentElement;
 
 const savedTheme =
-localStorage.getItem("theme");
+  localStorage.getItem("theme");
 
-if(savedTheme){
+if (savedTheme) {
 
-root.setAttribute(
-"data-theme",
-savedTheme
-);
+  root.dataset.theme =
+    savedTheme;
 
 }
 
-themeButton.addEventListener(
-"click",
-function(){
+document
+  .getElementById("themeButton")
+  .addEventListener(
+    "click",
+    function () {
 
-const current =
-root.getAttribute(
-"data-theme"
-);
+      const next =
+        root.dataset.theme === "dark"
+          ? "light"
+          : "dark";
 
-const next =
-current === "dark"
-? "light"
-: "dark";
+      root.dataset.theme =
+        next;
 
-root.setAttribute(
-"data-theme",
-next
-);
+      localStorage.setItem(
+        "theme",
+        next
+      );
 
-localStorage.setItem(
-"theme",
-next
-);
-
-}
-);
+    }
+  );
 
 
 /* =========================================================
@@ -3379,105 +3070,102 @@ next
    ========================================================= */
 
 const spotlight =
-document.getElementById(
-"spotlight"
-);
+  document.getElementById(
+    "spotlight"
+  );
 
 window.addEventListener(
-"pointermove",
-function(event){
+  "pointermove",
+  function (event) {
 
-spotlight.style.left =
-event.clientX + "px";
+    spotlight.style.left =
+      event.clientX + "px";
 
-spotlight.style.top =
-event.clientY + "px";
+    spotlight.style.top =
+      event.clientY + "px";
 
-},
-{
-passive:true
-}
+  },
+  {
+    passive:true
+  }
 );
 
 
 /* =========================================================
-   METRIC COUNTERS
+   ANIMATED COUNTERS
    ========================================================= */
 
 const counters =
-document.querySelectorAll(
-".counter"
-);
-
-function animateCounter(
-element
-){
-
-const target =
-Number(
-element.dataset.target
-);
-
-const suffix =
-element.dataset.suffix || "";
-
-let value =
-0;
-
-const duration =
-800;
-
-const start =
-performance.now();
-
-function update(time){
-
-const progress =
-Math.min(
-(time-start)/duration,
-1
-);
-
-const eased =
-1 -
-Math.pow(
-1-progress,
-3
-);
-
-value =
-Math.round(
-target*eased
-);
-
-element.textContent =
-value + suffix;
-
-if(progress < 1){
-
-requestAnimationFrame(
-update
-);
-
-}
-
-}
-
-requestAnimationFrame(
-update
-);
-
-}
-
-setTimeout(
-function(){
+  document.querySelectorAll(
+    ".counter"
+  );
 
 counters.forEach(
-animateCounter
-);
+  function (element) {
 
-},
-300
+    const target =
+      Number(
+        element.dataset.number
+      );
+
+    const suffix =
+      element.dataset.suffix || "";
+
+    let startTime;
+
+    function update(time) {
+
+      if (!startTime) {
+
+        startTime =
+          time;
+
+      }
+
+      const progress =
+        Math.min(
+          (time - startTime)
+          / 750,
+          1
+        );
+
+      const eased =
+        1 -
+        Math.pow(
+          1 - progress,
+          3
+        );
+
+      const value =
+        Math.round(
+          target * eased
+        );
+
+      element.textContent =
+        value + suffix;
+
+      if (progress < 1) {
+
+        requestAnimationFrame(
+          update
+        );
+
+      }
+
+    }
+
+    setTimeout(
+      function () {
+
+        requestAnimationFrame(
+          update
+        );
+
+      },
+      250
+    );
+
+  }
 );
 
 
@@ -3485,60 +3173,60 @@ animateCounter
    EXPERIENCE TABS
    ========================================================= */
 
-const tabs =
-document.querySelectorAll(
-".company-tab"
-);
+const companyTabs =
+  document.querySelectorAll(
+    ".company-tab"
+  );
 
 const panels =
-document.querySelectorAll(
-".exp-panel"
-);
+  document.querySelectorAll(
+    ".experience-panel"
+  );
 
-tabs.forEach(
-function(tab){
+companyTabs.forEach(
+  function (tab) {
 
-tab.addEventListener(
-"click",
-function(){
+    tab.addEventListener(
+      "click",
+      function () {
 
-tabs.forEach(
-function(item){
+        companyTabs.forEach(
+          function (item) {
 
-item.classList.remove(
-"active"
-);
+            item.classList.remove(
+              "active"
+            );
 
-}
-);
+          }
+        );
 
-panels.forEach(
-function(panel){
+        panels.forEach(
+          function (panel) {
 
-panel.classList.add(
-"hidden"
-);
+            panel.classList.add(
+              "hidden"
+            );
 
-}
-);
+          }
+        );
 
-tab.classList.add(
-"active"
-);
+        tab.classList.add(
+          "active"
+        );
 
-document
-.getElementById(
-tab.dataset.exp
-)
-.classList
-.remove(
-"hidden"
-);
+        document
+          .getElementById(
+            tab.dataset.panel
+          )
+          .classList
+          .remove(
+            "hidden"
+          );
 
-}
-);
+      }
+    );
 
-}
+  }
 );
 
 
@@ -3546,52 +3234,135 @@ tab.dataset.exp
    SCROLL REVEAL
    ========================================================= */
 
-const reveals =
-document.querySelectorAll(
-".reveal"
+const revealItems =
+  document.querySelectorAll(
+    ".reveal"
+  );
+
+const revealObserver =
+  new IntersectionObserver(
+
+    function (entries) {
+
+      entries.forEach(
+        function (entry) {
+
+          if (
+            entry.isIntersecting
+          ) {
+
+            entry.target
+              .classList
+              .add(
+                "visible"
+              );
+
+            revealObserver
+              .unobserve(
+                entry.target
+              );
+
+          }
+
+        }
+      );
+
+    },
+
+    {
+      threshold:.08
+    }
+
+  );
+
+revealItems.forEach(
+  function (item) {
+
+    revealObserver.observe(
+      item
+    );
+
+  }
 );
 
-const observer =
-new IntersectionObserver(
-function(entries){
 
-entries.forEach(
-function(entry){
+/* =========================================================
+   ACTIVE NAVIGATION
+   ========================================================= */
 
-if(
-entry.isIntersecting
-){
+const navLinks =
+  document.querySelectorAll(
+    ".nav-links a"
+  );
 
-entry.target
-.classList
-.add(
-"visible"
-);
+const sections =
+  Array.from(
+    navLinks
+  ).map(
+    function (link) {
 
-observer.unobserve(
-entry.target
-);
+      return document.querySelector(
+        link.getAttribute(
+          "href"
+        )
+      );
+
+    }
+  );
+
+function updateActiveNav() {
+
+  const scrollPosition =
+    window.scrollY + 100;
+
+  let active =
+    -1;
+
+  sections.forEach(
+    function (
+      section,
+      index
+    ) {
+
+      if (
+        section &&
+        section.offsetTop
+        <= scrollPosition
+      ) {
+
+        active =
+          index;
+
+      }
+
+    }
+  );
+
+  navLinks.forEach(
+    function (
+      link,
+      index
+    ) {
+
+      link.classList.toggle(
+        "active",
+        index === active
+      );
+
+    }
+  );
 
 }
 
-}
+window.addEventListener(
+  "scroll",
+  updateActiveNav,
+  {
+    passive:true
+  }
 );
 
-},
-{
-threshold:.08
-}
-);
-
-reveals.forEach(
-function(item){
-
-observer.observe(
-item
-);
-
-}
-);
+updateActiveNav();
 
 </script>
 
@@ -3614,7 +3385,6 @@ item
     "Microsoft Azure",
     "Amazon Web Services",
     "Terraform",
-    "Terragrunt",
     "Kubernetes",
     "GitHub Actions",
     "Azure DevOps",
