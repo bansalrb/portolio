@@ -1,328 +1,127 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
-
+<html lang="en">
 <head>
-
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
->
-
-<title>
-Rohan Bansal | Senior DevOps & Cloud Platform Engineer
-</title>
+<title>Rohan Bansal | Platform Engineering</title>
 
 <meta
   name="description"
-  content="Senior DevOps and Cloud Platform Engineer with 6+ years building reusable Terraform, CI/CD and Kubernetes platforms across Azure and AWS."
+  content="Senior DevOps and Cloud Platform Engineer building reusable infrastructure, release platforms and reliable cloud systems across Azure and AWS."
 >
 
-<meta
-  name="theme-color"
-  content="#090d12"
->
+<meta name="theme-color" content="#07110f">
 
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
   rel="stylesheet"
 >
 
 <style>
 
-/* ==========================================================
-   THEME
-   ========================================================== */
-
 :root {
+  --bg:#07110f;
+  --panel:#0d1a17;
+  --panel2:#12231f;
+  --line:#1e3831;
 
-  --bg:#090d12;
-  --panel:#111820;
-  --panel2:#17212b;
-  --line:#26313c;
+  --text:#f2f7f5;
+  --soft:#b8c7c2;
+  --muted:#758b83;
 
-  --text:#edf3f7;
-  --soft:#c6d0d9;
-  --muted:#8b98a5;
+  --green:#52e0a4;
+  --blue:#70b7ff;
+  --amber:#f1bd62;
 
-  --green:#43d6a1;
-  --green2:#21a97a;
-
-  --blue:#68b8ff;
-  --amber:#e6b84d;
-
-  --glow:rgba(67,214,161,.14);
-
-  --radius:12px;
-
+  --r:18px;
 }
-
-[data-theme="light"] {
-
-  --bg:#f3f6f8;
-  --panel:#ffffff;
-  --panel2:#edf2f5;
-  --line:#d6dfe5;
-
-  --text:#182027;
-  --soft:#35444f;
-  --muted:#62717e;
-
-  --green:#13835c;
-  --green2:#0e6849;
-
-  --blue:#0969da;
-  --amber:#9a6700;
-
-  --glow:rgba(19,131,92,.10);
-
-}
-
-/* ==========================================================
-   RESET
-   ========================================================== */
 
 * {
-
   box-sizing:border-box;
   margin:0;
   padding:0;
-
 }
 
 html {
-
   scroll-behavior:smooth;
-  scroll-padding-top:58px;
-
+  scroll-padding-top:68px;
 }
 
 body {
-
   background:var(--bg);
   color:var(--text);
 
-  font-family:
-    Inter,
-    system-ui,
-    sans-serif;
+  font-family:'DM Sans',system-ui,sans-serif;
 
-  font-size:14px;
-  line-height:1.48;
+  line-height:1.5;
 
   overflow-x:hidden;
-
 }
 
 a {
-
   color:inherit;
   text-decoration:none;
-
 }
 
 button {
-
   font:inherit;
+}
 
+.wrap {
+  width:min(1480px,calc(100% - 40px));
+  margin:auto;
+}
+
+.mono {
+  font-family:'JetBrains Mono',monospace;
 }
 
 ::selection {
-
   background:var(--green);
-  color:#03130d;
-
+  color:#04130d;
 }
 
 /* ==========================================================
-   PAGE WIDTH
+   TEXTURE + SPOTLIGHT
    ========================================================== */
 
-.wrap {
-
-  width:min(
-    1520px,
-    calc(100% - 36px)
-  );
-
-  margin:auto;
-
-}
-
-/* ==========================================================
-   ANIMATED BACKGROUND
-   ========================================================== */
-
-.grid-bg {
-
+.noise {
   position:fixed;
-
   inset:0;
 
-  z-index:-3;
-
   pointer-events:none;
 
-  background-image:
+  z-index:8;
 
-    linear-gradient(
-      rgba(110,150,170,.035) 1px,
-      transparent 1px
-    ),
+  opacity:.025;
 
-    linear-gradient(
-      90deg,
-      rgba(110,150,170,.035) 1px,
-      transparent 1px
-    );
-
-  background-size:
-    42px 42px;
-
-  mask-image:
-    linear-gradient(
-      #000,
-      transparent 78%
-    );
-
-  animation:
-    gridMove 20s linear infinite;
-
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
 }
 
-@keyframes gridMove {
-
-  to {
-
-    background-position:
-      42px 42px;
-
-  }
-
-}
-
-/* ==========================================================
-   AMBIENT ORBS
-   ========================================================== */
-
-.orb {
-
+.glow {
   position:fixed;
 
-  width:520px;
-  height:520px;
+  width:560px;
+  height:560px;
 
   border-radius:50%;
-
-  filter:blur(120px);
-
-  opacity:.10;
-
-  pointer-events:none;
-
-  z-index:-2;
-
-}
-
-.orb.one {
-
-  background:var(--green);
-
-  top:-300px;
-  left:-160px;
-
-  animation:
-    orbOne 13s
-    ease-in-out
-    infinite alternate;
-
-}
-
-.orb.two {
-
-  background:var(--blue);
-
-  right:-300px;
-  top:220px;
-
-  animation:
-    orbTwo 16s
-    ease-in-out
-    infinite alternate;
-
-}
-
-@keyframes orbOne {
-
-  to {
-
-    transform:
-      translate(
-        180px,
-        110px
-      );
-
-  }
-
-}
-
-@keyframes orbTwo {
-
-  to {
-
-    transform:
-      translate(
-        -140px,
-        130px
-      );
-
-  }
-
-}
-
-/* ==========================================================
-   MOUSE SPOTLIGHT
-   ========================================================== */
-
-.spotlight {
-
-  position:fixed;
-
-  width:460px;
-  height:460px;
-
-  border-radius:50%;
-
-  pointer-events:none;
-
-  z-index:-1;
-
-  transform:
-    translate(
-      -50%,
-      -50%
-    );
 
   background:
-
     radial-gradient(
       circle,
-      rgba(67,214,161,.07),
+      rgba(82,224,164,.085),
       transparent 67%
     );
 
+  pointer-events:none;
+
+  transform:translate(-50%,-50%);
+
+  z-index:-1;
 }
 
 /* ==========================================================
@@ -330,95 +129,67 @@ button {
    ========================================================== */
 
 header {
+  position:fixed;
 
-  position:sticky;
-
+  left:0;
+  right:0;
   top:0;
 
-  z-index:100;
+  z-index:20;
 
-  background:
-    color-mix(
-      in srgb,
-      var(--bg) 78%,
-      transparent
-    );
+  background:rgba(7,17,15,.72);
 
-  backdrop-filter:
-    blur(16px);
+  backdrop-filter:blur(20px);
 
   border-bottom:
-    1px solid
-    var(--line);
-
+    1px solid rgba(255,255,255,.06);
 }
 
 .nav {
-
-  height:54px;
+  height:62px;
 
   display:flex;
-
   align-items:center;
-
-  justify-content:
-    space-between;
-
+  justify-content:space-between;
 }
 
 .brand {
-
   font:
-    700 14px
-    "JetBrains Mono",
+    600 13px
+    'JetBrains Mono',
     monospace;
 
+  letter-spacing:-.02em;
 }
 
-.brand em {
-
-  font-style:normal;
-
+.brand span {
   color:var(--green);
-
 }
 
-.nav-links {
-
+.navlinks {
   display:flex;
-
-  gap:3px;
-
+  gap:4px;
 }
 
-.nav-links a {
-
-  padding:
-    6px 10px;
-
-  border-radius:7px;
+.navlinks a {
+  font-size:12px;
 
   color:var(--muted);
 
-  font-size:12.5px;
+  padding:7px 11px;
 
+  border-radius:99px;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-
+.navlinks a:hover {
   color:var(--text);
 
-  background:var(--panel2);
-
+  background:rgba(255,255,255,.05);
 }
 
-.nav-actions {
-
+.navright {
   display:flex;
-
-  gap:7px;
-
+  gap:8px;
 }
 
 /* ==========================================================
@@ -426,118 +197,45 @@ header {
    ========================================================== */
 
 .btn {
-
-  height:36px;
-
   display:inline-flex;
 
   align-items:center;
-
   justify-content:center;
 
-  gap:7px;
+  gap:8px;
 
-  padding:
-    0 13px;
+  height:38px;
 
-  border:
-    1px solid
-    var(--line);
+  padding:0 15px;
 
-  border-radius:8px;
+  border-radius:99px;
 
-  background:var(--panel);
+  border:1px solid var(--line);
+
+  background:rgba(255,255,255,.035);
 
   color:var(--text);
 
   font-size:12px;
-
-  font-weight:700;
+  font-weight:600;
 
   cursor:pointer;
 
-  transition:
-    .2s;
-
+  transition:.2s;
 }
 
 .btn:hover {
+  transform:translateY(-2px);
 
-  transform:
-    translateY(-2px);
-
-  border-color:
-    var(--green);
-
+  border-color:var(--green);
 }
 
 .btn.primary {
+  background:var(--green);
 
-  background:
+  color:#04130d;
 
-    linear-gradient(
-      135deg,
-      var(--green),
-      #69e6b9
-    );
-
-  border-color:transparent;
-
-  color:#042117;
-
-}
-
-.btn.primary:hover {
-
-  box-shadow:
-    0 8px 30px
-    rgba(67,214,161,.2);
-
-}
-
-.icon-btn {
-
-  width:36px;
-
-  padding:0;
-
-}
-
-.icon-btn svg,
-.btn svg {
-
-  width:15px;
-  height:15px;
-
-}
-
-/* ==========================================================
-   HERO DASHBOARD
-   ========================================================== */
-
-.dashboard {
-
-  min-height:
-    calc(
-      100vh - 54px
-    );
-
-  display:grid;
-
-  grid-template-columns:
-    1.04fr .96fr;
-
-  grid-template-rows:
-    auto auto;
-
-  gap:
-    14px 20px;
-
-  align-content:center;
-
-  padding:
-    24px 0 18px;
-
+  border-color:var(--green);
 }
 
 /* ==========================================================
@@ -545,1049 +243,700 @@ header {
    ========================================================== */
 
 .hero {
+  min-height:100svh;
 
-  animation:
-    slideUp
-    .7s ease both;
+  padding:90px 0 28px;
 
+  display:grid;
+
+  grid-template-columns:.82fr 1.18fr;
+
+  gap:40px;
+
+  align-items:center;
 }
 
-.status {
-
+.kicker {
   display:inline-flex;
 
   align-items:center;
 
-  gap:7px;
-
-  padding:
-    3px 10px;
-
-  border:
-    1px solid
-    color-mix(
-      in srgb,
-      var(--green) 38%,
-      transparent
-    );
-
-  border-radius:99px;
-
-  background:var(--glow);
+  gap:8px;
 
   color:var(--green);
 
-  font-size:11.5px;
+  font:
+    500 11px
+    'JetBrains Mono',
+    monospace;
 
+  letter-spacing:.04em;
+
+  text-transform:uppercase;
 }
 
-.status-dot {
-
-  width:6px;
-  height:6px;
+.kicker i {
+  width:7px;
+  height:7px;
 
   border-radius:50%;
 
   background:var(--green);
 
   box-shadow:
-    0 0 8px
-    var(--green);
+    0 0 15px var(--green);
 
-  animation:
-    pulse
-    1.8s infinite;
-
+  animation:pulse 1.8s infinite;
 }
 
 .hero h1 {
-
   font-size:
     clamp(
-      40px,
-      4.7vw,
-      64px
+      50px,
+      7vw,
+      92px
     );
 
-  line-height:1;
+  line-height:.94;
 
-  letter-spacing:
-    -.045em;
+  letter-spacing:-.065em;
 
-  margin:
-    12px 0 5px;
-
+  margin:18px 0 12px;
 }
 
-.role {
-
-  font-size:
-    clamp(
-      17px,
-      1.8vw,
-      21px
-    );
-
-  font-weight:650;
+.hero h1 span {
+  display:block;
 
   color:var(--green);
-
 }
 
 .lead {
+  max-width:620px;
 
-  max-width:700px;
+  color:var(--soft);
 
+  font-size:
+    clamp(
+      16px,
+      1.4vw,
+      20px
+    );
+
+  line-height:1.5;
+}
+
+.quick {
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin:22px 0 17px;
+}
+
+.meta {
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px 18px;
+
+  color:var(--muted);
+
+  font-size:12px;
+}
+
+/* ==========================================================
+   INFRASTRUCTURE NETWORK
+   ========================================================== */
+
+.network {
+  position:relative;
+
+  min-height:620px;
+
+  display:grid;
+  place-items:center;
+}
+
+.network svg {
+  width:100%;
+  height:auto;
+
+  max-height:690px;
+
+  overflow:visible;
+}
+
+.wire {
+  fill:none;
+
+  stroke:var(--line);
+
+  stroke-width:1.4;
+
+  stroke-dasharray:7 8;
+}
+
+.wire.active {
+  stroke:rgba(82,224,164,.45);
+}
+
+.flow {
+  fill:none;
+
+  stroke:var(--green);
+
+  stroke-width:2;
+
+  stroke-linecap:round;
+
+  stroke-dasharray:1 22;
+
+  animation:flow 2.6s linear infinite;
+}
+
+.node {
+  cursor:pointer;
+
+  transform-box:fill-box;
+  transform-origin:center;
+
+  transition:.25s;
+}
+
+.node:hover {
+  transform:
+    translateY(-5px)
+    scale(1.025);
+}
+
+.node rect {
+  fill:var(--panel);
+
+  stroke:var(--line);
+
+  stroke-width:1.4;
+}
+
+.node:hover rect,
+.node.core rect {
+  stroke:var(--green);
+}
+
+.node text {
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
+  fill:var(--text);
+
+  font-size:12px;
+}
+
+.node .sub {
+  fill:var(--muted);
+
+  font-size:9px;
+}
+
+.node.core rect {
+  fill:var(--panel2);
+
+  filter:url(#shadow);
+}
+
+.node.core .title {
+  font-size:15px;
+
+  font-weight:600;
+}
+
+.packet {
+  fill:var(--green);
+
+  filter:url(#blur);
+}
+
+.hint {
+  position:absolute;
+
+  right:2%;
+  bottom:7%;
+
+  padding:10px 12px;
+
+  color:var(--muted);
+
+  font:
+    10px
+    'JetBrains Mono',
+    monospace;
+
+  border:1px solid var(--line);
+
+  border-radius:10px;
+
+  background:rgba(13,26,23,.8);
+
+  backdrop-filter:blur(12px);
+}
+
+/* ==========================================================
+   CASE STUDIES
+   ========================================================== */
+
+.case {
+  min-height:100svh;
+
+  padding:84px 0 34px;
+
+  display:grid;
+
+  grid-template-columns:.7fr 1.3fr;
+
+  gap:38px;
+
+  align-items:center;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.055);
+}
+
+.case:nth-of-type(even) {
+  grid-template-columns:1.3fr .7fr;
+}
+
+.case:nth-of-type(even) .case-copy {
+  order:2;
+}
+
+.number {
+  color:var(--green);
+
+  font:
+    600 11px
+    'JetBrains Mono',
+    monospace;
+}
+
+.case h2 {
+  font-size:
+    clamp(
+      36px,
+      4.5vw,
+      66px
+    );
+
+  letter-spacing:-.055em;
+
+  line-height:.98;
+
+  margin:12px 0 16px;
+}
+
+.case-copy p {
   color:var(--soft);
 
   font-size:15px;
 
-  margin:
-    12px 0 14px;
-
+  max-width:530px;
 }
 
-.ctas {
-
+.outcomes {
   display:flex;
-
   flex-wrap:wrap;
-
-  gap:7px;
-
-}
-
-.meta {
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:
-    7px 17px;
-
-  color:var(--muted);
-
-  font-size:11.5px;
-
-  margin-top:12px;
-
-}
-
-/* ==========================================================
-   ENGINEERING SNAPSHOT
-   ========================================================== */
-
-.snapshot {
-
-  background:var(--panel);
-
-  border:
-    1px solid var(--line);
-
-  border-radius:var(--radius);
-
-  padding:
-    17px 19px;
-
-  animation:
-    slideUp
-    .7s .10s
-    ease both;
-
-}
-
-.snapshot-head {
-
-  display:flex;
-
-  justify-content:
-    space-between;
-
-  align-items:center;
-
-  margin-bottom:13px;
-
-}
-
-.snapshot-head b {
-
-  font:
-    650 12px
-    "JetBrains Mono",
-    monospace;
-
-  color:var(--blue);
-
-}
-
-.snapshot-head span {
-
-  font:
-    10.5px
-    "JetBrains Mono",
-    monospace;
-
-  color:var(--muted);
-
-}
-
-.snapshot-grid {
-
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
 
   gap:8px;
 
+  margin-top:18px;
 }
 
-.snapshot-item {
+.outcome {
+  padding:8px 11px;
 
-  padding:
-    9px 11px;
+  border:1px solid var(--line);
 
-  border:
-    1px solid
-    var(--line);
-
-  border-radius:9px;
-
-  background:var(--panel2);
-
-  transition:.2s;
-
-}
-
-.snapshot-item:hover {
-
-  transform:
-    translateY(-2px);
-
-  border-color:var(--green);
-
-}
-
-.snapshot-item small {
-
-  display:block;
-
-  color:var(--muted);
-
-  font:
-    9.5px
-    "JetBrains Mono",
-    monospace;
-
-}
-
-.snapshot-item b {
-
-  display:block;
-
-  margin-top:1px;
-
-  font-size:12.5px;
-
-}
-
-/* ==========================================================
-   IMPACT METRICS
-   ========================================================== */
-
-.impact {
-
-  grid-column:
-    1 / -1;
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:8px;
-
-  animation:
-    slideUp
-    .7s .2s
-    ease both;
-
-}
-
-.metric {
-
-  padding:
-    11px 14px;
-
-  background:var(--panel);
-
-  border:
-    1px solid
-    var(--line);
-
-  border-radius:10px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  transition:.2s;
-
-}
-
-.metric:hover {
-
-  transform:
-    translateY(-3px);
-
-  border-color:
-    color-mix(
-      in srgb,
-      var(--green) 55%,
-      var(--line)
-    );
-
-}
-
-.metric::after {
-
-  content:"";
-
-  position:absolute;
-
-  width:70px;
-  height:70px;
-
-  border-radius:50%;
-
-  right:-32px;
-  top:-35px;
-
-  background:var(--green);
-
-  filter:blur(28px);
-
-  opacity:.15;
-
-}
-
-.metric-number {
-
-  font:
-    700 20px
-    "JetBrains Mono",
-    monospace;
+  border-radius:99px;
 
   color:var(--green);
 
-}
-
-.metric span {
-
-  display:block;
-
-  color:var(--muted);
-
-  font-size:10.5px;
-
-}
-
-/* ==========================================================
-   SECTION SHARED
-   ========================================================== */
-
-section {
-
-  padding:
-    21px 0;
-
-}
-
-.section-head {
-
-  display:flex;
-
-  align-items:flex-end;
-
-  justify-content:
-    space-between;
-
-  gap:10px;
-
-  margin-bottom:10px;
-
-}
-
-.command-label {
-
   font:
-    10px
-    "JetBrains Mono",
+    500 10px
+    'JetBrains Mono',
     monospace;
-
-  color:var(--green);
-
-}
-
-.command-label::before {
-
-  content:"$ ";
-
-  color:var(--muted);
-
-}
-
-h2 {
-
-  font-size:20px;
-
-}
-
-.section-caption {
-
-  color:var(--muted);
-
-  font-size:11px;
-
 }
 
 /* ==========================================================
-   EXPERIENCE
+   ARCHITECTURE VISUAL
    ========================================================== */
 
-.experience {
+.visual {
+  min-height:560px;
 
-  display:grid;
+  border:1px solid var(--line);
 
-  grid-template-columns:
-    190px 1fr;
-
-  gap:10px;
-
-}
-
-.company-tabs {
-
-  display:grid;
-
-  align-content:start;
-
-  gap:5px;
-
-}
-
-.company-tab {
-
-  text-align:left;
-
-  padding:
-    8px 10px;
-
-  background:transparent;
-
-  color:var(--muted);
-
-  border:
-    1px solid transparent;
-
-  border-left:
-    3px solid
-    var(--line);
-
-  border-radius:8px;
-
-  cursor:pointer;
-
-}
-
-.company-tab.active {
-
-  background:var(--panel);
-
-  border-color:
-    var(--line);
-
-  border-left-color:
-    var(--green);
-
-}
-
-.company-tab b {
-
-  display:block;
-
-  color:var(--text);
-
-  font-size:12px;
-
-}
-
-.company-tab.active b {
-
-  color:var(--green);
-
-}
-
-.company-tab small {
-
-  font-size:10px;
-
-}
-
-/* ==========================================================
-   EXPERIENCE PANEL
-   ========================================================== */
-
-.experience-panel {
-
-  padding:
-    13px 15px;
-
-  background:var(--panel);
-
-  border:
-    1px solid var(--line);
-
-  border-radius:var(--radius);
-
-}
-
-.experience-panel.hidden {
-
-  display:none;
-
-}
-
-.experience-heading {
-
-  display:flex;
-
-  justify-content:
-    space-between;
-
-  gap:7px;
-
-  flex-wrap:wrap;
-
-}
-
-.experience-heading h3 {
-
-  font-size:14px;
-
-}
-
-.experience-date {
-
-  color:var(--muted);
-
-  font:
-    10px
-    "JetBrains Mono",
-    monospace;
-
-}
-
-.experience-org {
-
-  color:var(--blue);
-
-  font-size:11.5px;
-
-  margin:
-    2px 0 7px;
-
-}
-
-.experience-panel ul {
-
-  list-style:none;
-
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:
-    5px 14px;
-
-}
-
-.experience-panel li {
-
-  position:relative;
-
-  padding-left:13px;
-
-  color:var(--soft);
-
-  font-size:11.5px;
-
-  line-height:1.38;
-
-}
-
-.experience-panel li::before {
-
-  content:"+";
-
-  position:absolute;
-
-  left:0;
-
-  color:var(--green);
-
-}
-
-.experience-panel strong {
-
-  color:var(--text);
-
-}
-
-.tech-line {
-
-  margin-top:8px;
-
-  color:var(--muted);
-
-  font:
-    9.5px
-    "JetBrains Mono",
-    monospace;
-
-}
-
-/* ==========================================================
-   FEATURED WORK + STACK
-   ========================================================== */
-
-.work-layout {
-
-  display:grid;
-
-  grid-template-columns:
-    1.15fr .85fr;
-
-  gap:11px;
-
-}
-
-.box {
-
-  background:var(--panel);
-
-  border:
-    1px solid var(--line);
-
-  border-radius:var(--radius);
-
-}
-
-/* ==========================================================
-   PROJECT GRID
-   ========================================================== */
-
-.projects {
-
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:7px;
-
-}
-
-.project {
-
-  padding:
-    11px 12px;
-
-  transition:.2s;
-
-}
-
-.project:hover {
-
-  transform:
-    translateY(-3px);
-
-  border-color:var(--green);
-
-}
-
-.project.featured {
-
-  grid-column:
-    1 / -1;
+  border-radius:var(--r);
 
   background:
 
-    linear-gradient(
-      135deg,
-      var(--glow),
-      transparent
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(82,224,164,.10),
+      transparent 42%
     ),
 
     var(--panel);
 
+  overflow:hidden;
+
+  position:relative;
+
+  display:grid;
+
+  place-items:center;
 }
 
-.project h3 {
+.visual svg {
+  width:92%;
 
-  font-size:12px;
-
+  height:auto;
 }
 
-.project p {
+.arch-line {
+  fill:none;
 
-  color:var(--muted);
+  stroke:var(--line);
 
-  font-size:10.8px;
-
-  line-height:1.38;
-
-  margin-top:3px;
-
+  stroke-width:2;
 }
 
-.project-result {
+.arch-flow {
+  fill:none;
 
-  color:var(--green);
+  stroke:var(--green);
 
-  font-size:10px;
+  stroke-width:2;
 
-  margin-top:4px;
+  stroke-dasharray:8 10;
+}
 
+.arch-box {
+  fill:var(--panel2);
+
+  stroke:var(--line);
+
+  stroke-width:1.5;
+}
+
+.arch-box.hot {
+  stroke:var(--green);
+}
+
+.arch-text {
+  font-family:
+    'JetBrains Mono',
+    monospace;
+
+  fill:var(--text);
+
+  font-size:11px;
+}
+
+.arch-sub {
+  fill:var(--muted);
+
+  font-size:9px;
+}
+
+.stage {
+  opacity:.28;
+}
+
+.stage.on {
+  opacity:1;
+}
+
+.tag {
+  fill:rgba(241,189,98,.12);
+
+  stroke:var(--amber);
+}
+
+.tag-text {
+  fill:var(--amber);
 }
 
 /* ==========================================================
-   STACK
+   CAREER
    ========================================================== */
 
-.stack {
+.career {
+  padding:90px 0 70px;
 
-  padding:
-    13px 14px;
-
+  border-top:
+    1px solid
+    rgba(255,255,255,.055);
 }
 
-.stack-title {
-
-  color:var(--blue);
-
-  font:
-    650 10.5px
-    "JetBrains Mono",
-    monospace;
-
-  margin-bottom:8px;
-
-}
-
-.stack-group {
-
-  margin-bottom:7px;
-
-}
-
-.stack-group:last-child {
-
-  margin-bottom:0;
-
-}
-
-.stack-group b {
-
-  display:block;
-
-  color:var(--muted);
-
-  font:
-    9px
-    "JetBrains Mono",
-    monospace;
-
-  margin-bottom:3px;
-
-}
-
-.pills {
-
+.section-head {
   display:flex;
 
-  flex-wrap:wrap;
+  align-items:flex-end;
 
-  gap:4px;
+  justify-content:space-between;
 
+  margin-bottom:30px;
 }
 
-.pill {
+.section-head h2 {
+  font-size:
+    clamp(
+      36px,
+      4vw,
+      58px
+    );
 
-  padding:
-    2px 6px;
-
-  background:var(--panel2);
-
-  border:
-    1px solid
-    var(--line);
-
-  border-radius:5px;
-
-  color:var(--soft);
-
-  font:
-    9px
-    "JetBrains Mono",
-    monospace;
-
+  letter-spacing:-.05em;
 }
 
-/* ==========================================================
-   BOTTOM DASHBOARD
-   ========================================================== */
-
-.bottom {
-
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:9px;
-
-  margin-top:9px;
-
-}
-
-.credentials,
-.contact {
-
-  padding:
-    12px 14px;
-
-}
-
-.mini-title {
-
-  font:
-    650 10px
-    "JetBrains Mono",
-    monospace;
-
-  color:var(--green);
-
-  margin-bottom:7px;
-
-}
-
-/* ==========================================================
-   CERTIFICATIONS
-   ========================================================== */
-
-.certifications {
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:5px;
-
-}
-
-.cert {
-
-  padding:6px;
-
-  text-align:center;
-
-  background:var(--panel2);
-
-  border:
-    1px solid
-    var(--line);
-
-  border-radius:7px;
-
-}
-
-.cert b {
-
-  display:block;
-
-  font-size:10.5px;
-
-}
-
-.cert span {
-
+.section-head p {
   color:var(--muted);
 
-  font-size:8.5px;
-
+  font-size:12px;
 }
 
-.education {
+.timeline {
+  display:grid;
 
-  margin-top:7px;
+  grid-template-columns:
+    repeat(3,1fr);
 
-  padding-top:7px;
+  gap:10px;
+}
+
+.job {
+  padding:22px;
+
+  border:1px solid var(--line);
+
+  border-radius:14px;
+
+  background:var(--panel);
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.job:hover,
+.job.active {
+  transform:translateY(-4px);
+
+  border-color:var(--green);
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(82,224,164,.09),
+      transparent
+    ),
+
+    var(--panel);
+}
+
+.job .year {
+  color:var(--green);
+
+  font:
+    600 10px
+    'JetBrains Mono',
+    monospace;
+}
+
+.job h3 {
+  margin:8px 0 3px;
+
+  font-size:18px;
+}
+
+.job p {
+  color:var(--muted);
+
+  font-size:12px;
+}
+
+.drawer {
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:
+    max-height .45s ease;
+}
+
+.drawer.open {
+  max-height:310px;
+}
+
+.drawer-inner {
+  margin-top:12px;
+
+  padding-top:12px;
 
   border-top:
     1px solid
     var(--line);
 
-  color:var(--muted);
+  color:var(--soft);
 
-  font-size:10px;
-
+  font-size:12px;
 }
 
-.education strong {
-
-  color:var(--text);
-
-}
-
-/* ==========================================================
-   CONTACT
-   ========================================================== */
-
-.contact {
+.drawer ul {
+  padding-left:18px;
 
   display:grid;
 
-  grid-template-columns:
-    1fr auto;
-
-  align-items:center;
-
-  gap:10px;
-
-  background:
-
-    linear-gradient(
-      135deg,
-      var(--glow),
-      transparent 68%
-    ),
-
-    var(--panel);
-
-}
-
-.contact h3 {
-
-  font-size:14px;
-
-}
-
-.contact p {
-
-  color:var(--muted);
-
-  font-size:10px;
-
-  margin-top:2px;
-
-}
-
-.contact .nav-actions {
-
-  flex-wrap:wrap;
-
+  gap:5px;
 }
 
 /* ==========================================================
-   FOOTER
+   TECHNOLOGY TICKER
    ========================================================== */
 
-footer {
+.ticker {
+  overflow:hidden;
+
+  border-block:
+    1px solid
+    var(--line);
+
+  padding:16px 0;
+}
+
+.track {
+  display:flex;
+
+  width:max-content;
+
+  animation:
+    marquee
+    28s linear infinite;
+}
+
+.track span {
+  font:
+    600 13px
+    'JetBrains Mono',
+    monospace;
+
+  color:var(--muted);
+
+  padding:0 24px;
+}
+
+.track b {
+  color:var(--green);
+
+  font-weight:500;
+}
+
+/* ==========================================================
+   FINAL CONTACT
+   ========================================================== */
+
+.ending {
+  min-height:72svh;
+
+  display:grid;
+
+  place-items:center;
 
   text-align:center;
 
+  padding:80px 0;
+}
+
+.ending h2 {
+  font-size:
+    clamp(
+      52px,
+      9vw,
+      130px
+    );
+
+  line-height:.88;
+
+  letter-spacing:-.07em;
+}
+
+.ending h2 span {
+  color:var(--green);
+}
+
+.ending p {
+  color:var(--soft);
+
+  margin:20px auto;
+
+  max-width:620px;
+
+  font-size:16px;
+}
+
+.contact-row {
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+}
+
+.fine {
+  margin-top:20px;
+
   color:var(--muted);
 
-  font:
-    9px
-    "JetBrains Mono",
-    monospace;
-
-  padding:13px;
-
+  font-size:11px;
 }
 
 /* ==========================================================
-   REVEAL ANIMATION
+   REVEALS / ANIMATION
    ========================================================== */
 
 .reveal {
-
   opacity:0;
 
   transform:
-    translateY(15px);
-
-  transition:.55s;
-
-}
-
-.reveal.visible {
-
-  opacity:1;
-
-  transform:none;
-
-}
-
-@keyframes slideUp {
-
-  from {
-
-    opacity:0;
-
-    transform:
-      translateY(20px);
-
-  }
-
-  to {
-
-    opacity:1;
-
-    transform:none;
-
-  }
-
+    translateY(40px);
 }
 
 @keyframes pulse {
 
   50% {
-
-    opacity:.35;
-
+    opacity:.3;
   }
 
 }
 
-/* ==========================================================
-   LARGE DESKTOP
-   ========================================================== */
+@keyframes flow {
 
-@media (min-width:1500px) {
+  to {
+    stroke-dashoffset:-46;
+  }
 
-  .wrap {
+}
 
-    width:min(
-      1520px,
-      calc(100% - 52px)
-    );
+@keyframes marquee {
 
+  to {
+    transform:
+      translateX(-50%);
   }
 
 }
@@ -1596,79 +945,52 @@ footer {
    TABLET
    ========================================================== */
 
-@media (max-width:980px) {
+@media(max-width:980px) {
 
   .wrap {
-
     width:
       calc(100% - 28px);
-
   }
 
-  .nav-links {
-
+  .navlinks {
     display:none;
-
   }
 
-  .dashboard {
+  .hero {
+    grid-template-columns:1fr;
 
     min-height:auto;
 
-    grid-template-columns:
-      1fr;
-
-    padding-top:22px;
-
+    padding-top:110px;
   }
 
-  .snapshot {
+  .network {
+    min-height:520px;
+  }
 
+  .case,
+  .case:nth-of-type(even) {
+    grid-template-columns:1fr;
+
+    min-height:auto;
+
+    padding:72px 0;
+  }
+
+  .case:nth-of-type(even) .case-copy {
+    order:0;
+  }
+
+  .visual {
+    min-height:480px;
+  }
+
+  .timeline {
+    grid-template-columns:1fr;
+  }
+
+  .hint {
     display:none;
-
-  }
-
-  .impact {
-
-    grid-column:1;
-
-  }
-
-  .work-layout {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-  .experience {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-  .company-tabs {
-
-    display:flex;
-
-    overflow-x:auto;
-
-  }
-
-  .company-tab {
-
-    min-width:150px;
-
-    flex-shrink:0;
-
-  }
-
-  .bottom {
-
-    grid-template-columns:
-      1fr;
-
   }
 
 }
@@ -1677,101 +999,64 @@ footer {
    MOBILE
    ========================================================== */
 
-@media (max-width:620px) {
+@media(max-width:620px) {
+
+  .network {
+    min-height:390px;
+  }
+
+  .network svg {
+    transform:scale(1.08);
+  }
 
   .hero h1 {
-
-    font-size:39px;
-
+    font-size:50px;
   }
 
-  .role {
-
-    font-size:16px;
-
+  .case h2 {
+    font-size:42px;
   }
 
-  .lead {
-
-    font-size:14px;
-
+  .visual {
+    min-height:350px;
   }
 
-  .impact {
-
-    grid-template-columns:
-      1fr 1fr;
-
+  .visual svg {
+    width:105%;
   }
 
-  .experience-panel ul {
-
-    grid-template-columns:
-      1fr;
-
+  .ending h2 {
+    font-size:58px;
   }
 
-  .projects {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-  .project.featured {
-
-    grid-column:auto;
-
-  }
-
-  .certifications {
-
-    grid-template-columns:
-      1fr 1fr;
-
-  }
-
-  .contact {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
-  .resume-word {
-
+  .navright .btn span {
     display:none;
-
   }
 
-  .spotlight {
-
-    display:none;
-
+  .job {
+    padding:17px;
   }
 
 }
 
 /* ==========================================================
-   REDUCED MOTION
+   ACCESSIBILITY
    ========================================================== */
 
-@media (
-  prefers-reduced-motion:reduce
-) {
+@media(prefers-reduced-motion:reduce) {
 
   * {
-
     animation:none !important;
-
     transition:none !important;
+  }
 
+  .reveal {
+    opacity:1;
+    transform:none;
   }
 
   html {
-
     scroll-behavior:auto;
-
   }
 
 }
@@ -1782,10 +1067,12 @@ footer {
 
 <body>
 
-<div class="grid-bg"></div>
-<div class="orb one"></div>
-<div class="orb two"></div>
-<div class="spotlight" id="spotlight"></div>
+<div class="noise"></div>
+
+<div
+  class="glow"
+  id="glow"
+></div>
 
 <!-- ======================================================
      NAVIGATION
@@ -1799,17 +1086,17 @@ footer {
   class="brand"
   href="#top"
 >
-  rohan<em>@</em>devops
+rohan<span>@</span>platform
 </a>
 
-<nav class="nav-links">
+<nav class="navlinks">
 
-<a href="#experience">
-Experience
+<a href="#systems">
+Systems
 </a>
 
-<a href="#work">
-Work
+<a href="#career">
+Career
 </a>
 
 <a href="#contact">
@@ -1818,35 +1105,14 @@ Contact
 
 </nav>
 
-<div class="nav-actions">
+<div class="navright">
 
-<button
-  class="btn icon-btn"
-  id="themeButton"
-  type="button"
-  aria-label="Toggle light and dark theme"
+<a
+  class="btn"
+  href="mailto:bansal.rohan2567@gmail.com"
 >
-
-<svg
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
->
-
-<circle
-  cx="12"
-  cy="12"
-  r="4"
-/>
-
-<path
-  d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
-/>
-
-</svg>
-
-</button>
+Email
+</a>
 
 <a
   class="btn primary"
@@ -1854,22 +1120,11 @@ Contact
   download
 >
 
-<svg
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
->
-
-<path
-  d="M12 3v12M7 10l5 5 5-5M5 21h14"
-/>
-
-</svg>
-
-<span class="resume-word">
+<span>
 Resume
 </span>
+
+↓
 
 </a>
 
@@ -1879,88 +1134,64 @@ Resume
 
 </header>
 
-<!-- ======================================================
-     MAIN
-     ====================================================== -->
-
-<main
-  class="wrap"
-  id="top"
->
+<main id="top">
 
 <!-- ======================================================
-     DASHBOARD HERO
+     HERO
      ====================================================== -->
 
-<div class="dashboard">
+<section class="hero wrap">
 
-<div class="hero">
+<div class="hero-copy reveal">
 
-<div class="status">
+<div class="kicker">
 
-<span class="status-dot"></span>
+<i></i>
 
-Open to Senior DevOps / Platform roles
+available for senior platform roles
 
 </div>
 
 <h1>
-Rohan Bansal
+
+Rohan
+
+<br>
+
+<span>
+Bansal.
+</span>
+
 </h1>
 
-<div class="role">
-Senior DevOps Engineer · Cloud Platform Engineer
+<div class="lead">
+
+I build cloud platforms that ship software reliably,
+from reusable Terraform and CI/CD
+to multi-region Azure systems
+and Kubernetes.
+
 </div>
 
-<p class="lead">
-
-I engineer
-<strong>reusable cloud platforms</strong>
-across
-<strong>Azure and AWS</strong>:
-modular Terraform,
-reusable CI/CD,
-Kubernetes,
-controlled releases,
-multi-region DR,
-DevSecOps
-and FinOps.
-
-</p>
-
-<div class="ctas">
+<div class="quick">
 
 <a
   class="btn primary"
+  href="#systems"
+>
+
+Explore the systems ↓
+
+</a>
+
+<a
+  class="btn"
   href="Rohan_Bansal_Senior_DevOps_Resume.pdf"
   download
 >
-Download Resume
-</a>
 
-<a
-  class="btn"
-  href="mailto:bansal.rohan2567@gmail.com"
->
-Email Me
-</a>
+Download resume
 
-<a
-  class="btn"
-  href="https://linkedin.com/in/bansalrb"
-  target="_blank"
-  rel="noopener noreferrer"
->
-LinkedIn
-</a>
-
-<a
-  class="btn"
-  href="https://github.com/bansalrb"
-  target="_blank"
-  rel="noopener noreferrer"
->
-GitHub
 </a>
 
 </div>
@@ -1968,7 +1199,7 @@ GitHub
 <div class="meta">
 
 <span>
-India · Remote / relocation
+6+ years · Azure + AWS
 </span>
 
 <span>
@@ -1980,546 +1211,351 @@ CKA · AZ-104 · AWS CCP · GH-300
 </div>
 
 <!-- ======================================================
-     ENGINEERING SNAPSHOT
-     ====================================================== -->
-
-<aside class="snapshot">
-
-<div class="snapshot-head">
-
-<b>
-engineering_snapshot.yaml
-</b>
-
-<span>
-production profile
-</span>
-
-</div>
-
-<div class="snapshot-grid">
-
-<div class="snapshot-item">
-
-<small>
-cloud
-</small>
-
-<b>
-Azure · AWS
-</b>
-
-</div>
-
-<div class="snapshot-item">
-
-<small>
-platform
-</small>
-
-<b>
-Terraform · Kubernetes
-</b>
-
-</div>
-
-<div class="snapshot-item">
-
-<small>
-delivery
-</small>
-
-<b>
-GitHub Actions · Azure DevOps
-</b>
-
-</div>
-
-<div class="snapshot-item">
-
-<small>
-reliability
-</small>
-
-<b>
-Multi-region DR · GitOps
-</b>
-
-</div>
-
-<div class="snapshot-item">
-
-<small>
-security
-</small>
-
-<b>
-DevSecOps · RBAC · Secrets
-</b>
-
-</div>
-
-<div class="snapshot-item">
-
-<small>
-data_ai
-</small>
-
-<b>
-Databricks · ADF · OpenAI
-</b>
-
-</div>
-
-</div>
-
-</aside>
-
-<!-- ======================================================
-     METRICS
-     ====================================================== -->
-
-<div class="impact">
-
-<div class="metric">
-
-<div
-  class="metric-number counter"
-  data-number="6"
-  data-suffix="+"
->
-0
-</div>
-
-<span>
-years DevOps & Cloud
-</span>
-
-</div>
-
-<div class="metric">
-
-<div
-  class="metric-number counter"
-  data-number="20"
-  data-suffix="%"
->
-0
-</div>
-
-<span>
-Azure cost reduction
-</span>
-
-</div>
-
-<div class="metric">
-
-<div
-  class="metric-number counter"
-  data-number="50"
-  data-suffix="%"
->
-0
-</div>
-
-<span>
-less manual effort
-</span>
-
-</div>
-
-<div class="metric">
-
-<div
-  class="metric-number counter"
-  data-number="35"
-  data-suffix="%"
->
-0
-</div>
-
-<span>
-higher deployment frequency
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ======================================================
-     EXPERIENCE
-     ====================================================== -->
-
-<section
-  id="experience"
-  class="reveal"
->
-
-<div class="section-head">
-
-<div>
-
-<div class="command-label">
-git log --career
-</div>
-
-<h2>
-Experience
-</h2>
-
-</div>
-
-<div class="section-caption">
-Select employer
-</div>
-
-</div>
-
-<div class="experience">
-
-<!-- COMPANY TABS -->
-
-<div class="company-tabs">
-
-<button
-  class="company-tab active"
-  data-panel="cognizant"
->
-
-<b>
-Cognizant
-</b>
-
-<small>
-Apr 2025 – Present
-</small>
-
-</button>
-
-<button
-  class="company-tab"
-  data-panel="deloitte"
->
-
-<b>
-HashedIn by Deloitte
-</b>
-
-<small>
-Oct 2021 – Apr 2025
-</small>
-
-</button>
-
-<button
-  class="company-tab"
-  data-panel="infosys"
->
-
-<b>
-Infosys
-</b>
-
-<small>
-Sep 2019 – Sep 2021
-</small>
-
-</button>
-
-</div>
-
-<!-- ======================================================
-     COGNIZANT
+     ANIMATED INFRASTRUCTURE HERO
      ====================================================== -->
 
 <div
-  class="experience-panel"
-  id="cognizant"
+  class="network reveal"
+  aria-label="Animated infrastructure topology"
 >
 
-<div class="experience-heading">
-
-<h3>
-Senior DevOps Engineer / Infrastructure Specialist
-</h3>
-
-<span class="experience-date">
-Apr 2025 – Present
-</span>
-
-</div>
-
-<div class="experience-org">
-
-Cognizant · Optum / UnitedHealth Group
-
-</div>
-
-<ul>
-
-<li>
-
-<strong>
-Platform:
-</strong>
-
-Reusable Terraform modules for
-VMs,
-VMSS,
-App Gateway,
-networking,
-Managed Identities
-and Key Vault.
-
-</li>
-
-<li>
-
-<strong>
-DR:
-</strong>
-
-Blue-green releases and
-active-passive multi-region DR
-using Azure Traffic Manager.
-
-</li>
-
-<li>
-
-<strong>
-Databricks:
-</strong>
-
-VNet injection,
-Private Endpoints,
-Unity Catalog,
-RBAC
-and cross-subscription migration.
-
-</li>
-
-<li>
-
-<strong>
-Release engineering:
-</strong>
-
-CI/CD for Databricks,
-Functions
-and ADF
-using build-once/promote releases.
-
-</li>
-
-<li>
-
-<strong>
-Automation:
-</strong>
-
-Python/Bash reduced
-manual effort by 40%.
-
-</li>
-
-<li>
-
-<strong>
-FinOps:
-</strong>
-
-Right-sizing and cleanup
-drove 20% Azure cost reduction.
-
-</li>
-
-</ul>
-
-<div class="tech-line">
-
-Azure · Terraform · GitHub Actions ·
-Databricks · ADF · Traffic Manager ·
-ServiceNow
-
-</div>
-
-</div>
-
-<!-- ======================================================
-     DELOITTE
-     ====================================================== -->
-
-<div
-  class="experience-panel hidden"
-  id="deloitte"
+<svg
+  viewBox="0 0 760 620"
+  role="img"
+  aria-label="Cloud platform topology connecting Terraform, CI/CD, Azure, AWS and Kubernetes"
 >
 
-<div class="experience-heading">
+<defs>
 
-<h3>
-DevOps Engineer
-</h3>
+<filter id="shadow">
 
-<span class="experience-date">
-Oct 2021 – Apr 2025
-</span>
+<feDropShadow
+  dx="0"
+  dy="12"
+  stdDeviation="14"
+  flood-color="#000"
+  flood-opacity=".35"
+/>
 
-</div>
+</filter>
 
-<div class="experience-org">
-HashedIn by Deloitte
-</div>
+<filter id="blur">
 
-<ul>
+<feGaussianBlur
+  stdDeviation="1.8"
+/>
 
-<li>
+</filter>
 
-<strong>
-IaC:
-</strong>
+</defs>
 
-Reusable Terraform/Terragrunt architecture
-across AWS and Azure.
+<!-- AZURE -->
 
-</li>
+<path
+  class="wire active"
+  d="M380 310 C275 220 225 160 128 115"
+/>
 
-<li>
+<path
+  class="flow"
+  d="M380 310 C275 220 225 160 128 115"
+/>
 
-<strong>
-Delivery:
-</strong>
+<!-- AWS -->
 
-Reusable GitHub Actions,
-Azure DevOps
-and CodePipeline workflows.
+<path
+  class="wire active"
+  d="M380 310 C500 220 560 155 650 115"
+/>
 
-</li>
+<path
+  class="flow"
+  d="M380 310 C500 220 560 155 650 115"
+/>
 
-<li>
+<!-- TERRAFORM -->
 
-<strong>
-Containers:
-</strong>
+<path
+  class="wire active"
+  d="M380 310 C240 335 178 370 95 435"
+/>
 
-Docker workloads
-across ECS,
-EKS,
-AKS
-and Kubernetes.
+<path
+  class="flow"
+  d="M380 310 C240 335 178 370 95 435"
+/>
 
-</li>
+<!-- KUBERNETES -->
 
-<li>
+<path
+  class="wire active"
+  d="M380 310 C510 335 575 375 665 435"
+/>
 
-<strong>
-AI platform:
-</strong>
+<path
+  class="flow"
+  d="M380 310 C510 335 575 375 665 435"
+/>
 
-Azure OpenAI infrastructure
-and CI/CD for LLM applications.
+<!-- CICD -->
 
-</li>
+<path
+  class="wire"
+  d="M380 310 C375 440 378 485 380 545"
+/>
 
-<li>
+<!-- AZURE NODE -->
 
-<strong>
-DevSecOps:
-</strong>
-
-Fortify,
-Trivy
-and Mend OSS delivery gates.
-
-</li>
-
-<li>
-
-<strong>
-Automation:
-</strong>
-
-Python/Boto3
-cut manual operations by 50%.
-
-</li>
-
-</ul>
-
-<div class="tech-line">
-
-AWS · Azure · Terraform · Terragrunt ·
-Kubernetes · EKS · ECS · GitHub Actions ·
-Prometheus
-
-</div>
-
-</div>
-
-<!-- ======================================================
-     INFOSYS
-     ====================================================== -->
-
-<div
-  class="experience-panel hidden"
-  id="infosys"
+<g
+  class="node"
+  data-label="Azure"
 >
 
-<div class="experience-heading">
+<rect
+  x="55"
+  y="76"
+  width="150"
+  height="76"
+  rx="15"
+/>
 
-<h3>
-Systems Engineer – DevOps
-</h3>
+<text
+  x="78"
+  y="104"
+>
+AZURE
+</text>
 
-<span class="experience-date">
-Sep 2019 – Sep 2021
-</span>
+<text
+  class="sub"
+  x="78"
+  y="125"
+>
 
-</div>
+DR · DATA · NETWORK
 
-<div class="experience-org">
-Infosys Limited
-</div>
+</text>
 
-<ul>
+</g>
 
-<li>
+<!-- AWS NODE -->
 
-<strong>
-Azure:
-</strong>
+<g
+  class="node"
+  data-label="AWS"
+>
 
-Terraform and Azure Pipelines
-for Zoetis infrastructure
-and repeatable environments.
+<rect
+  x="575"
+  y="76"
+  width="130"
+  height="76"
+  rx="15"
+/>
 
-</li>
+<text
+  x="598"
+  y="104"
+>
+AWS
+</text>
 
-<li>
+<text
+  class="sub"
+  x="598"
+  y="125"
+>
+EKS · ECS · IAM
+</text>
 
-<strong>
-CI/CD:
-</strong>
+</g>
 
-Salesforce release automation
-for Coca-Cola with
-AutoRabbit,
-Git
-and Bash.
+<!-- TERRAFORM NODE -->
 
-</li>
+<g class="node">
 
-</ul>
+<rect
+  x="34"
+  y="405"
+  width="166"
+  height="78"
+  rx="15"
+/>
 
-<div class="tech-line">
+<text
+  x="57"
+  y="435"
+>
+TERRAFORM
+</text>
 
-Azure · Terraform · Azure Pipelines ·
-TFS · Git · Bash
+<text
+  class="sub"
+  x="57"
+  y="456"
+>
 
-</div>
+MODULES · TERRAGRUNT
+
+</text>
+
+</g>
+
+<!-- KUBERNETES NODE -->
+
+<g class="node">
+
+<rect
+  x="584"
+  y="405"
+  width="142"
+  height="78"
+  rx="15"
+/>
+
+<text
+  x="607"
+  y="435"
+>
+KUBERNETES
+</text>
+
+<text
+  class="sub"
+  x="607"
+  y="456"
+>
+AKS · EKS · HELM
+</text>
+
+</g>
+
+<!-- CICD NODE -->
+
+<g class="node">
+
+<rect
+  x="283"
+  y="516"
+  width="194"
+  height="72"
+  rx="15"
+/>
+
+<text
+  x="307"
+  y="545"
+>
+CI/CD PLATFORM
+</text>
+
+<text
+  class="sub"
+  x="307"
+  y="566"
+>
+BUILD · SCAN · PROMOTE
+</text>
+
+</g>
+
+<!-- CENTER -->
+
+<g class="node core">
+
+<rect
+  x="278"
+  y="254"
+  width="204"
+  height="116"
+  rx="22"
+/>
+
+<text
+  class="title"
+  x="312"
+  y="302"
+>
+ROHAN BANSAL
+</text>
+
+<text
+  class="sub"
+  x="312"
+  y="327"
+>
+PLATFORM ENGINEERING
+</text>
+
+<text
+  class="sub"
+  x="312"
+  y="347"
+>
+RELIABILITY BY DESIGN
+</text>
+
+</g>
+
+<!-- MOVING PACKETS -->
+
+<circle
+  class="packet"
+  r="4"
+>
+
+<animateMotion
+  dur="3s"
+  repeatCount="indefinite"
+  path="M380 310 C275 220 225 160 128 115"
+/>
+
+</circle>
+
+<circle
+  class="packet"
+  r="4"
+>
+
+<animateMotion
+  dur="3.6s"
+  repeatCount="indefinite"
+  path="M380 310 C500 220 560 155 650 115"
+/>
+
+</circle>
+
+<circle
+  class="packet"
+  r="4"
+>
+
+<animateMotion
+  dur="2.8s"
+  repeatCount="indefinite"
+  path="M380 310 C240 335 178 370 95 435"
+/>
+
+</circle>
+
+<circle
+  class="packet"
+  r="4"
+>
+
+<animateMotion
+  dur="3.2s"
+  repeatCount="indefinite"
+  path="M380 310 C510 335 575 375 665 435"
+/>
+
+</circle>
+
+</svg>
+
+<div class="hint">
+
+hover nodes · follow the flow
 
 </div>
 
@@ -2527,453 +1563,853 @@ TFS · Git · Bash
 
 </section>
 
+<div id="systems"></div>
+
 <!-- ======================================================
-     FEATURED WORK
+     SYSTEM 01
      ====================================================== -->
 
-<section
-  id="work"
-  class="reveal"
->
+<section class="case wrap reveal">
 
-<div class="section-head">
+<div class="case-copy">
 
-<div>
-
-<div class="command-label">
-ls ./platform-work
+<div class="number">
+SYSTEM 01 / AZURE
 </div>
 
 <h2>
-Featured Work + Stack
+
+Multi-region.
+
+<br>
+
+No drama.
+
 </h2>
 
+<p>
+
+On-prem ArcGIS moved to Azure
+through Terraform and GitHub Actions,
+with blue-green releases
+and active-passive disaster recovery
+orchestrated by Traffic Manager.
+
+</p>
+
+<div class="outcomes">
+
+<span class="outcome">
+ZERO-DOWNTIME STRATEGY
+</span>
+
+<span class="outcome">
+20% COST REDUCTION
+</span>
+
 </div>
 
-<div class="section-caption">
-Selected production engineering
 </div>
+
+<div class="visual">
+
+<svg viewBox="0 0 820 520">
+
+<path
+  class="arch-line"
+  d="M410 95V155M410 155H230V205M410 155H590V205"
+/>
+
+<path
+  class="arch-flow"
+  d="M410 95V155M410 155H230V205"
+/>
+
+<rect
+  class="arch-box hot"
+  x="320"
+  y="55"
+  width="180"
+  height="58"
+  rx="12"
+/>
+
+<text
+  class="arch-text"
+  x="348"
+  y="82"
+>
+TRAFFIC MANAGER
+</text>
+
+<text
+  class="arch-sub"
+  x="359"
+  y="101"
+>
+HEALTH-BASED ROUTING
+</text>
+
+<!-- PRIMARY -->
+
+<rect
+  class="arch-box hot"
+  x="110"
+  y="205"
+  width="240"
+  height="220"
+  rx="18"
+/>
+
+<text
+  class="arch-text"
+  x="180"
+  y="238"
+>
+PRIMARY REGION
+</text>
+
+<rect
+  class="arch-box"
+  x="150"
+  y="268"
+  width="160"
+  height="55"
+  rx="10"
+/>
+
+<text
+  class="arch-text"
+  x="191"
+  y="298"
+>
+APP GATEWAY
+</text>
+
+<rect
+  class="arch-box"
+  x="150"
+  y="342"
+  width="160"
+  height="55"
+  rx="10"
+/>
+
+<text
+  class="arch-text"
+  x="201"
+  y="372"
+>
+VM SCALE SET
+</text>
+
+<!-- DR -->
+
+<rect
+  class="arch-box"
+  x="470"
+  y="205"
+  width="240"
+  height="220"
+  rx="18"
+/>
+
+<text
+  class="arch-text"
+  x="557"
+  y="238"
+>
+DR REGION
+</text>
+
+<rect
+  class="arch-box"
+  x="510"
+  y="268"
+  width="160"
+  height="55"
+  rx="10"
+/>
+
+<text
+  class="arch-text"
+  x="551"
+  y="298"
+>
+APP GATEWAY
+</text>
+
+<rect
+  class="arch-box"
+  x="510"
+  y="342"
+  width="160"
+  height="55"
+  rx="10"
+/>
+
+<text
+  class="arch-text"
+  x="561"
+  y="372"
+>
+VM SCALE SET
+</text>
+
+<path
+  class="arch-line"
+  d="M230 323V342M590 323V342"
+/>
+
+</svg>
 
 </div>
 
-<div class="work-layout">
+</section>
 
 <!-- ======================================================
-     PROJECTS
+     SYSTEM 02
      ====================================================== -->
 
-<div class="projects">
+<section class="case wrap reveal">
 
-<article class="project box featured">
+<div class="case-copy">
 
-<h3>
-Multi-Cloud Terraform Platform
-</h3>
+<div class="number">
+SYSTEM 02 / RELEASES
+</div>
+
+<h2>
+
+Build once.
+
+<br>
+
+Promote safely.
+
+</h2>
 
 <p>
 
-Reusable Terraform/Terragrunt architecture
-across AWS and Azure with remote state
-and environment-driven configuration.
+Validated non-production releases receive
+a version tag and the exact same artifact
+moves to production.
+
+Production always knows what is running,
+and rollback targets a known good release.
 
 </p>
 
-<div class="project-result">
+<div class="outcomes">
 
-→ Faster provisioning · less drift
+<span class="outcome">
+TRACEABLE VERSIONS
+</span>
+
+<span class="outcome">
+RELIABLE ROLLBACK
+</span>
+
+</div>
+
+</div>
+
+<div class="visual pipeline">
+
+<svg viewBox="0 0 900 500">
+
+<path
+  class="arch-line"
+  d="M110 250H790"
+/>
+
+<!-- CODE -->
+
+<g class="stage s1">
+
+<circle
+  class="arch-box hot"
+  cx="120"
+  cy="250"
+  r="40"
+/>
+
+<text
+  class="arch-text"
+  x="97"
+  y="255"
+>
+CODE
+</text>
+
+</g>
+
+<!-- BUILD -->
+
+<g class="stage s2">
+
+<circle
+  class="arch-box"
+  cx="275"
+  cy="250"
+  r="40"
+/>
+
+<text
+  class="arch-text"
+  x="252"
+  y="255"
+>
+BUILD
+</text>
+
+</g>
+
+<!-- NON PROD -->
+
+<g class="stage s3">
+
+<circle
+  class="arch-box"
+  cx="430"
+  cy="250"
+  r="44"
+/>
+
+<text
+  class="arch-text"
+  x="398"
+  y="255"
+>
+NON-PROD
+</text>
+
+</g>
+
+<!-- TAG -->
+
+<g class="stage s4">
+
+<rect
+  class="arch-box tag"
+  x="545"
+  y="210"
+  width="100"
+  height="80"
+  rx="13"
+/>
+
+<text
+  class="arch-text tag-text"
+  x="566"
+  y="246"
+>
+TAG
+</text>
+
+<text
+  class="arch-sub tag-text"
+  x="564"
+  y="268"
+>
+v2.8.1
+</text>
+
+</g>
+
+<!-- PROD -->
+
+<g class="stage s5">
+
+<circle
+  class="arch-box"
+  cx="760"
+  cy="250"
+  r="42"
+/>
+
+<text
+  class="arch-text"
+  x="739"
+  y="255"
+>
+PROD
+</text>
+
+</g>
+
+<text
+  class="arch-sub"
+  x="81"
+  y="330"
+>
+COMMIT
+</text>
+
+<text
+  class="arch-sub"
+  x="235"
+  y="330"
+>
+ARTIFACT
+</text>
+
+<text
+  class="arch-sub"
+  x="391"
+  y="330"
+>
+VALIDATE
+</text>
+
+<text
+  class="arch-sub"
+  x="535"
+  y="330"
+>
+IMMUTABLE
+</text>
+
+<text
+  class="arch-sub"
+  x="721"
+  y="330"
+>
+PROMOTE
+</text>
+
+<path
+  class="arch-flow"
+  d="M160 250H235M315 250H386M474 250H545M645 250H718"
+/>
+
+</svg>
+
+</div>
+
+</section>
+
+<!-- ======================================================
+     SYSTEM 03
+     ====================================================== -->
+
+<section class="case wrap reveal">
+
+<div class="case-copy">
+
+<div class="number">
+SYSTEM 03 / PLATFORM
+</div>
+
+<h2>
+
+One workflow.
+
+<br>
+
+Many teams.
+
+</h2>
+
+<p>
+
+Reusable GitHub Actions remove duplicated
+pipeline logic across teams.
+
+Build,
+security scanning,
+infrastructure deployment,
+cleanup,
+and reporting become governed
+platform capabilities.
+
+</p>
+
+<div class="outcomes">
+
+<span class="outcome">
+35% MORE FREQUENT DEPLOYS
+</span>
+
+<span class="outcome">
+50% LESS MANUAL EFFORT
+</span>
+
+</div>
+
+</div>
+
+<div class="visual reuse">
+
+<svg viewBox="0 0 820 520">
+
+<!-- WORKFLOW -->
+
+<rect
+  class="arch-box hot"
+  x="285"
+  y="65"
+  width="250"
+  height="80"
+  rx="16"
+/>
+
+<text
+  class="arch-text"
+  x="327"
+  y="101"
+>
+REUSABLE WORKFLOW
+</text>
+
+<text
+  class="arch-sub"
+  x="340"
+  y="124"
+>
+BUILD · SCAN · DEPLOY
+</text>
+
+<!-- LINKS -->
+
+<path
+  class="arch-line"
+  d="M410 145V218M410 218H155V287M410 218H410V287M410 218H665V287"
+/>
+
+<path
+  class="arch-flow"
+  d="M410 145V218M410 218H155V287"
+/>
+
+<!-- TEAM A -->
+
+<rect
+  class="arch-box"
+  x="70"
+  y="287"
+  width="170"
+  height="105"
+  rx="15"
+/>
+
+<text
+  class="arch-text"
+  x="117"
+  y="329"
+>
+TEAM ALPHA
+</text>
+
+<text
+  class="arch-sub"
+  x="105"
+  y="352"
+>
+TERRAFORM / APP
+</text>
+
+<!-- TEAM B -->
+
+<rect
+  class="arch-box"
+  x="325"
+  y="287"
+  width="170"
+  height="105"
+  rx="15"
+/>
+
+<text
+  class="arch-text"
+  x="372"
+  y="329"
+>
+TEAM BETA
+</text>
+
+<text
+  class="arch-sub"
+  x="361"
+  y="352"
+>
+DATA / FUNCTIONS
+</text>
+
+<!-- TEAM C -->
+
+<rect
+  class="arch-box"
+  x="580"
+  y="287"
+  width="170"
+  height="105"
+  rx="15"
+/>
+
+<text
+  class="arch-text"
+  x="620"
+  y="329"
+>
+TEAM GAMMA
+</text>
+
+<text
+  class="arch-sub"
+  x="619"
+  y="352"
+>
+KUBERNETES
+</text>
+
+</svg>
+
+</div>
+
+</section>
+
+<!-- ======================================================
+     CAREER
+     ====================================================== -->
+
+<section
+  class="career wrap"
+  id="career"
+>
+
+<div class="section-head reveal">
+
+<h2>
+Career, compressed.
+</h2>
+
+<p>
+Click a role for detail
+</p>
+
+</div>
+
+<div class="timeline reveal">
+
+<!-- COGNIZANT -->
+
+<article class="job active">
+
+<div class="year">
+2025 — NOW
+</div>
+
+<h3>
+Cognizant
+</h3>
+
+<p>
+Senior DevOps / Infrastructure Specialist · Optum/UHG
+</p>
+
+<div class="drawer open">
+
+<div class="drawer-inner">
+
+<ul>
+
+<li>
+Azure platform engineering and multi-region DR
+</li>
+
+<li>
+Databricks, ADF and versioned release pipelines
+</li>
+
+<li>
+FinOps, automation and production support
+</li>
+
+</ul>
+
+</div>
 
 </div>
 
 </article>
 
-<article class="project box">
+<!-- DELOITTE -->
+
+<article class="job">
+
+<div class="year">
+2021 — 2025
+</div>
 
 <h3>
-Reusable GitHub Actions
+HashedIn by Deloitte
 </h3>
 
 <p>
-
-Shared workflows for
-IaC,
-security,
-deployment,
-cleanup
-and reporting.
-
+DevOps Engineer
 </p>
 
-<div class="project-result">
-→ Standardized delivery
+<div class="drawer">
+
+<div class="drawer-inner">
+
+<ul>
+
+<li>
+Multi-cloud Terraform and Terragrunt
+</li>
+
+<li>
+Reusable GitHub Actions and Azure DevOps
+</li>
+
+<li>
+Kubernetes, DevSecOps and Azure OpenAI
+</li>
+
+</ul>
+
+</div>
+
 </div>
 
 </article>
 
-<article class="project box">
+<!-- INFOSYS -->
+
+<article class="job">
+
+<div class="year">
+2019 — 2021
+</div>
 
 <h3>
-Azure Blue-Green + DR
+Infosys
 </h3>
 
 <p>
-
-ArcGIS migration with
-Traffic Manager
-and active-passive failover.
-
+Systems Engineer · DevOps
 </p>
 
-<div class="project-result">
-→ Zero-downtime releases
+<div class="drawer">
+
+<div class="drawer-inner">
+
+<ul>
+
+<li>
+Azure infrastructure with Terraform and TFS
+</li>
+
+<li>
+Repeatable CI/CD for enterprise environments
+</li>
+
+</ul>
+
+</div>
+
 </div>
 
 </article>
 
-<article class="project box">
-
-<h3>
-Databricks Release Engineering
-</h3>
-
-<p>
-
-Version-tagged Databricks,
-ADF
-and Function App promotion.
-
-</p>
-
-<div class="project-result">
-→ Traceable rollback
 </div>
 
-</article>
+</section>
 
-<article class="project box">
+<!-- ======================================================
+     TECHNOLOGY TICKER
+     ====================================================== -->
 
-<h3>
-GitOps Kubernetes Platform
-</h3>
+<div class="ticker">
 
-<p>
+<div class="track">
 
-Argo CD deployments
-with OPA Gatekeeper
-policy enforcement.
+<span>
 
-</p>
+<b>Terraform</b>
+· Kubernetes
+· Azure
+· AWS
+· GitHub Actions
+· Terragrunt
+· AKS
+· EKS
+· Databricks
+· Argo CD
+· Python
+· Prometheus
+· Grafana
+· DevSecOps
+·
 
-</article>
+</span>
+
+<span>
+
+<b>Terraform</b>
+· Kubernetes
+· Azure
+· AWS
+· GitHub Actions
+· Terragrunt
+· AKS
+· EKS
+· Databricks
+· Argo CD
+· Python
+· Prometheus
+· Grafana
+· DevSecOps
+·
+
+</span>
+
+</div>
 
 </div>
 
 <!-- ======================================================
-     STACK
+     CONTACT
      ====================================================== -->
 
-<aside class="stack box">
-
-<div class="stack-title">
-stack.yaml
-</div>
-
-<div class="stack-group">
-
-<b>
-cloud
-</b>
-
-<div class="pills">
-
-<span class="pill">
-Azure
-</span>
-
-<span class="pill">
-AWS
-</span>
-
-<span class="pill">
-VNet/VPC
-</span>
-
-<span class="pill">
-Private Link
-</span>
-
-<span class="pill">
-IAM/RBAC
-</span>
-
-</div>
-
-</div>
-
-<div class="stack-group">
-
-<b>
-infrastructure
-</b>
-
-<div class="pills">
-
-<span class="pill">
-Terraform
-</span>
-
-<span class="pill">
-Terragrunt
-</span>
-
-<span class="pill">
-Python
-</span>
-
-<span class="pill">
-Boto3
-</span>
-
-<span class="pill">
-Bash
-</span>
-
-</div>
-
-</div>
-
-<div class="stack-group">
-
-<b>
-containers
-</b>
-
-<div class="pills">
-
-<span class="pill">
-Kubernetes
-</span>
-
-<span class="pill">
-AKS
-</span>
-
-<span class="pill">
-EKS
-</span>
-
-<span class="pill">
-ECS
-</span>
-
-<span class="pill">
-Helm
-</span>
-
-</div>
-
-</div>
-
-<div class="stack-group">
-
-<b>
-delivery
-</b>
-
-<div class="pills">
-
-<span class="pill">
-GitHub Actions
-</span>
-
-<span class="pill">
-Azure DevOps
-</span>
-
-<span class="pill">
-Argo CD
-</span>
-
-<span class="pill">
-Jenkins
-</span>
-
-</div>
-
-</div>
-
-<div class="stack-group">
-
-<b>
-security / sre
-</b>
-
-<div class="pills">
-
-<span class="pill">
-Trivy
-</span>
-
-<span class="pill">
-Fortify
-</span>
-
-<span class="pill">
-Mend OSS
-</span>
-
-<span class="pill">
-Prometheus
-</span>
-
-<span class="pill">
-Grafana
-</span>
-
-</div>
-
-</div>
-
-<div class="stack-group">
-
-<b>
-data / ai
-</b>
-
-<div class="pills">
-
-<span class="pill">
-Databricks
-</span>
-
-<span class="pill">
-ADF
-</span>
-
-<span class="pill">
-Functions
-</span>
-
-<span class="pill">
-Azure OpenAI
-</span>
-
-</div>
-
-</div>
-
-</aside>
-
-</div>
-
-<!-- ======================================================
-     CREDENTIALS + CONTACT
-     ====================================================== -->
-
-<div class="bottom">
-
-<div class="credentials box">
-
-<div class="mini-title">
-credentials
-</div>
-
-<div class="certifications">
-
-<div class="cert">
-
-<b>
-CKA
-</b>
-
-<span>
-Kubernetes
-</span>
-
-</div>
-
-<div class="cert">
-
-<b>
-AZ-104
-</b>
-
-<span>
-Azure
-</span>
-
-</div>
-
-<div class="cert">
-
-<b>
-AWS CCP
-</b>
-
-<span>
-AWS
-</span>
-
-</div>
-
-<div class="cert">
-
-<b>
-GH-300
-</b>
-
-<span>
-GitHub
-</span>
-
-</div>
-
-</div>
-
-<div class="education">
-
-<strong>
-B.E. Computer Science
-</strong>
-
-· Chitkara University ·
-CGPA 8.71/10
-
-</div>
-
-</div>
-
-<div
-  class="contact box"
+<section
+  class="ending wrap"
   id="contact"
 >
 
-<div>
+<div class="reveal">
 
-<div class="mini-title">
-./contact.sh
-</div>
+<h2>
 
-<h3>
-Let's build reliable platforms.
-</h3>
+Build reliable
+
+<br>
+
+<span>
+systems.
+</span>
+
+</h2>
 
 <p>
 
-Open to Senior DevOps,
-Cloud Platform
-and Platform Engineering roles.
+Available for Senior DevOps,
+Cloud Platform,
+and Platform Engineering opportunities.
 
 </p>
 
-</div>
-
-<div class="nav-actions">
+<div class="contact-row">
 
 <a
   class="btn primary"
   href="mailto:bansal.rohan2567@gmail.com"
 >
-Email
+
+bansal.rohan2567@gmail.com
+
 </a>
 
 <a
@@ -2982,10 +2418,39 @@ Email
   target="_blank"
   rel="noopener noreferrer"
 >
+
 LinkedIn
+
+</a>
+
+<a
+  class="btn"
+  href="https://github.com/bansalrb"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+
+GitHub
+
+</a>
+
+<a
+  class="btn"
+  href="Rohan_Bansal_Senior_DevOps_Resume.pdf"
+  download
+>
+
+Resume
+
 </a>
 
 </div>
+
+<div class="fine">
+
+CKA · AZ-104 · AWS CCP · GH-300 ·
+B.E. Computer Science,
+Chitkara University
 
 </div>
 
@@ -2996,93 +2461,59 @@ LinkedIn
 </main>
 
 <!-- ======================================================
-     FOOTER
+     GSAP
      ====================================================== -->
 
-<footer>
+<script
+  src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+></script>
 
-©
-<span id="year"></span>
-
-Rohan Bansal ·
-Senior DevOps / Cloud Platform Engineer
-
-</footer>
-
-<!-- ======================================================
-     JAVASCRIPT
-     ====================================================== -->
+<script
+  src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"
+></script>
 
 <script>
 
-/* =========================================================
-   YEAR
-   ========================================================= */
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
 
-document
-  .getElementById("year")
-  .textContent =
-  new Date().getFullYear();
+const reduceMotion =
+  matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
 
-/* =========================================================
-   THEME
-   ========================================================= */
+/* ==========================================================
+   MOUSE LIGHT
+   ========================================================== */
 
-const root =
-  document.documentElement;
+const glow =
+  document.getElementById(
+    "glow"
+  );
 
-const savedTheme =
-  localStorage.getItem("theme");
+addEventListener(
+  "pointermove",
+  function(event) {
 
-if (savedTheme) {
+    if (!reduceMotion) {
 
-  root.dataset.theme =
-    savedTheme;
+      glow.animate(
+        {
+          left:
+            event.clientX + "px",
 
-}
-
-document
-  .getElementById("themeButton")
-  .addEventListener(
-    "click",
-    function () {
-
-      const next =
-        root.dataset.theme === "dark"
-          ? "light"
-          : "dark";
-
-      root.dataset.theme =
-        next;
-
-      localStorage.setItem(
-        "theme",
-        next
+          top:
+            event.clientY + "px"
+        },
+        {
+          duration:500,
+          fill:"forwards"
+        }
       );
 
     }
-  );
-
-
-/* =========================================================
-   MOUSE SPOTLIGHT
-   ========================================================= */
-
-const spotlight =
-  document.getElementById(
-    "spotlight"
-  );
-
-window.addEventListener(
-  "pointermove",
-  function (event) {
-
-    spotlight.style.left =
-      event.clientX + "px";
-
-    spotlight.style.top =
-      event.clientY + "px";
 
   },
   {
@@ -3091,278 +2522,240 @@ window.addEventListener(
 );
 
 
-/* =========================================================
-   ANIMATED COUNTERS
-   ========================================================= */
+/* ==========================================================
+   CAREER ACCORDION
+   ========================================================== */
 
-const counters =
-  document.querySelectorAll(
-    ".counter"
-  );
+document
+  .querySelectorAll(
+    ".job"
+  )
+  .forEach(
+    function(job) {
 
-counters.forEach(
-  function (element) {
+      job.onclick =
+        function() {
 
-    const target =
-      Number(
-        element.dataset.number
-      );
+          document
+            .querySelectorAll(
+              ".job"
+            )
+            .forEach(
+              function(item) {
 
-    const suffix =
-      element.dataset.suffix || "";
+                item
+                  .classList
+                  .remove(
+                    "active"
+                  );
 
-    let startTime;
+                item
+                  .querySelector(
+                    ".drawer"
+                  )
+                  .classList
+                  .remove(
+                    "open"
+                  );
 
-    function update(time) {
+              }
+            );
 
-      if (!startTime) {
-
-        startTime =
-          time;
-
-      }
-
-      const progress =
-        Math.min(
-          (time - startTime)
-          / 750,
-          1
-        );
-
-      const eased =
-        1 -
-        Math.pow(
-          1 - progress,
-          3
-        );
-
-      const value =
-        Math.round(
-          target * eased
-        );
-
-      element.textContent =
-        value + suffix;
-
-      if (progress < 1) {
-
-        requestAnimationFrame(
-          update
-        );
-
-      }
-
-    }
-
-    setTimeout(
-      function () {
-
-        requestAnimationFrame(
-          update
-        );
-
-      },
-      250
-    );
-
-  }
-);
-
-
-/* =========================================================
-   EXPERIENCE TABS
-   ========================================================= */
-
-const companyTabs =
-  document.querySelectorAll(
-    ".company-tab"
-  );
-
-const panels =
-  document.querySelectorAll(
-    ".experience-panel"
-  );
-
-companyTabs.forEach(
-  function (tab) {
-
-    tab.addEventListener(
-      "click",
-      function () {
-
-        companyTabs.forEach(
-          function (item) {
-
-            item.classList.remove(
+          job
+            .classList
+            .add(
               "active"
             );
 
-          }
-        );
-
-        panels.forEach(
-          function (panel) {
-
-            panel.classList.add(
-              "hidden"
+          job
+            .querySelector(
+              ".drawer"
+            )
+            .classList
+            .add(
+              "open"
             );
 
-          }
-        );
+        };
 
-        tab.classList.add(
-          "active"
-        );
-
-        document
-          .getElementById(
-            tab.dataset.panel
-          )
-          .classList
-          .remove(
-            "hidden"
-          );
-
-      }
-    );
-
-  }
-);
-
-
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
-
-const revealItems =
-  document.querySelectorAll(
-    ".reveal"
+    }
   );
 
-const revealObserver =
-  new IntersectionObserver(
 
-    function (entries) {
+/* ==========================================================
+   GSAP
+   ========================================================== */
 
-      entries.forEach(
-        function (entry) {
+if (
+  window.gsap &&
+  !reduceMotion
+) {
 
-          if (
-            entry.isIntersecting
-          ) {
+  gsap.registerPlugin(
+    ScrollTrigger
+  );
 
-            entry.target
-              .classList
-              .add(
-                "visible"
-              );
+  /* Hero */
 
-            revealObserver
-              .unobserve(
-                entry.target
-              );
-
-          }
-
-        }
-      );
-
-    },
-
+  gsap.from(
+    ".hero-copy > *",
     {
-      threshold:.08
-    }
+      y:24,
+      opacity:0,
 
-  );
+      duration:.75,
 
-revealItems.forEach(
-  function (item) {
+      stagger:.08,
 
-    revealObserver.observe(
-      item
-    );
-
-  }
-);
-
-
-/* =========================================================
-   ACTIVE NAVIGATION
-   ========================================================= */
-
-const navLinks =
-  document.querySelectorAll(
-    ".nav-links a"
-  );
-
-const sections =
-  Array.from(
-    navLinks
-  ).map(
-    function (link) {
-
-      return document.querySelector(
-        link.getAttribute(
-          "href"
-        )
-      );
-
+      ease:"power3.out"
     }
   );
 
-function updateActiveNav() {
+  /* Network nodes */
 
-  const scrollPosition =
-    window.scrollY + 100;
+  gsap.from(
+    ".network .node",
+    {
+      scale:.75,
+      opacity:0,
 
-  let active =
-    -1;
+      duration:.7,
 
-  sections.forEach(
-    function (
-      section,
-      index
-    ) {
+      stagger:.09,
 
-      if (
-        section &&
-        section.offsetTop
-        <= scrollPosition
-      ) {
+      ease:"back.out(1.5)"
+    }
+  );
 
-        active =
-          index;
+  /* Generic reveals */
+
+  gsap
+    .utils
+    .toArray(
+      ".reveal"
+    )
+    .forEach(
+      function(element) {
+
+        gsap.to(
+          element,
+          {
+            opacity:1,
+            y:0,
+
+            duration:.75,
+
+            ease:"power3.out",
+
+            scrollTrigger:{
+              trigger:element,
+              start:"top 84%"
+            }
+          }
+        );
 
       }
+    );
 
+  /* Architecture cards */
+
+  gsap
+    .utils
+    .toArray(
+      ".case"
+    )
+    .forEach(
+      function(caseSection) {
+
+        const visual =
+          caseSection
+            .querySelector(
+              ".visual"
+            );
+
+        gsap.from(
+          visual,
+          {
+            scale:.94,
+            opacity:.15,
+
+            duration:1,
+
+            scrollTrigger:{
+              trigger:caseSection,
+              start:"top 72%"
+            }
+          }
+        );
+
+      }
+    );
+
+  /* Pipeline */
+
+  gsap.to(
+    ".pipeline .stage",
+    {
+      opacity:1,
+
+      stagger:.18,
+
+      duration:.35,
+
+      scrollTrigger:{
+        trigger:".pipeline",
+        start:"top 72%"
+      }
     }
   );
 
-  navLinks.forEach(
-    function (
-      link,
-      index
-    ) {
+  /* Reusable workflow */
 
-      link.classList.toggle(
-        "active",
-        index === active
-      );
+  gsap.from(
+    ".reuse .arch-box",
+    {
+      scale:.8,
 
+      opacity:0,
+
+      stagger:.15,
+
+      duration:.5,
+
+      transformOrigin:"center",
+
+      scrollTrigger:{
+        trigger:".reuse",
+        start:"top 72%"
+      }
     }
   );
 
 }
 
-window.addEventListener(
-  "scroll",
-  updateActiveNav,
-  {
-    passive:true
-  }
-);
+/* ==========================================================
+   FALLBACK
+   ========================================================== */
 
-updateActiveNav();
+else {
+
+  document
+    .querySelectorAll(
+      ".reveal"
+    )
+    .forEach(
+      function(element) {
+
+        element.style.opacity =
+          1;
+
+        element.style.transform =
+          "none";
+
+      }
+    );
+
+}
 
 </script>
 
@@ -3372,16 +2765,16 @@ updateActiveNav();
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Rohan Bansal",
-  "jobTitle": "Senior DevOps Engineer / Cloud Platform Engineer",
-  "email": "mailto:bansal.rohan2567@gmail.com",
-  "sameAs": [
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Rohan Bansal",
+  "jobTitle":"Senior DevOps Engineer / Cloud Platform Engineer",
+  "email":"mailto:bansal.rohan2567@gmail.com",
+  "sameAs":[
     "https://github.com/bansalrb",
     "https://linkedin.com/in/bansalrb"
   ],
-  "knowsAbout": [
+  "knowsAbout":[
     "Microsoft Azure",
     "Amazon Web Services",
     "Terraform",
@@ -3393,9 +2786,9 @@ updateActiveNav();
     "DevSecOps",
     "Azure Databricks"
   ],
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Chitkara University"
+  "alumniOf":{
+    "@type":"CollegeOrUniversity",
+    "name":"Chitkara University"
   }
 }
 </script>
